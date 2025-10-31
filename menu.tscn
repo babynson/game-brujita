@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctopn1qe21viu"]
+
+[ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_5o7br"]
+[ext_resource type="FontFile" uid="uid://bggp2qsb742jt" path="res://assets/fonts/HPSimplified.ttf" id="1_ca8jh"]
+[ext_resource type="FontFile" uid="uid://bjrxvxyarbkpp" path="res://assets/fonts/BRLNSDB.TTF" id="2_2j82s"]
+[ext_resource type="Script" path="res://jugar.gd" id="3_n00if"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlces"]
+bg_color = Color(0.57, 0.14, 1, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 20
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_6nifr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32mmd"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PresentacionJuego" type="Sprite2D" parent="."]
+position = Vector2(586.095, 333)
+scale = Vector2(0.589868, 0.48209)
+texture = ExtResource("1_5o7br")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -213.0
+offset_right = 218.0
+offset_bottom = 235.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.980392, 0.737255, 0, 1)
+theme_override_fonts/font = ExtResource("2_2j82s")
+theme_override_font_sizes/font_size = 50
+text = "Alquimista"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="jugar2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ca8jh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlces")
+button_group = SubResource("ButtonGroup_6nifr")
+text = "jugar "
+script = ExtResource("3_n00if")
+
+[node name="instrucciones" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ca8jh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlces")
+button_group = SubResource("ButtonGroup_6nifr")
+text = "Instrucciones
+"
+script = ExtResource("3_n00if")
+
+[node name="salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_ca8jh")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_32mmd")
+text = "salir"
+
+[connection signal="pressed" from="VBoxContainer/jugar2" to="VBoxContainer/jugar2" method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/instrucciones" to="VBoxContainer/instrucciones" method="_on_instruccion_pressed"]

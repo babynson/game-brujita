@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7cileoicqjbb"]
+
+[ext_resource type="PackedScene" uid="uid://b51ejwfyvquku" path="res://FallingObject.tscn" id="1_nnejv"]
+[ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="2_c8dmu"]
+
+[node name="GoodObject" instance=ExtResource("1_nnejv")]
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+modulate = Color(0.6, 1, 0.6, 1)
+
+[node name="Objetos-02" type="Sprite2D" parent="." index="2"]
+position = Vector2(0, -10)
+scale = Vector2(0.866667, 0.866667)
+texture = ExtResource("2_c8dmu")

@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://mpbg1mixb2ks"]
+
+[ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_x1581"]
+[ext_resource type="Texture2D" uid="uid://3u273sjxqa77" path="res://assets/FONDO-instrucciones-nivel2.jpg" id="2_k2bre"]
+[ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="3_da0px"]
+[ext_resource type="Script" path="res://jugar.gd" id="4_gdtwp"]
+
+[sub_resource type="FontFile" id="FontFile_rvjj1"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_cgexd"]
+font_size = 26
+outline_color = Color(0.12549, 1, 1, 1)
+shadow_size = 3
+shadow_color = Color(0, 0.886275, 0.231373, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
+resource_name = "boton_verde"
+bg_color = Color(0, 0.7, 0.56, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 10
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_7y546"]
+default_font_size = 30
+Button/fonts/font = ExtResource("3_da0px")
+Button/styles/focus = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/hover = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/normal = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/pressed = null
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x1581")
+expand_mode = 1
+
+[node name="FondoInstrucciones" type="Sprite2D" parent="."]
+position = Vector2(596.625, 321.25)
+scale = Vector2(0.623945, 0.605093)
+texture = ExtResource("2_k2bre")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 371.0
+offset_top = 254.0
+offset_right = 724.0
+offset_bottom = 426.0
+theme_override_fonts/normal_font = SubResource("FontFile_rvjj1")
+bbcode_enabled = true
+text = "OBJETIVO 1 : 
+
+TIENES QUE CREAR UNA POCIMA CON 
+
+RESTOS HUMANOS
+EXTRACTO DE SANGRE DE CORDERO
+SALIVA DE MONO"
+fit_content = true
+custom_effects = [null, null, null, null, null, null, null, null]
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+clip_contents = true
+layout_direction = 1
+layout_mode = 0
+offset_left = 308.0
+offset_top = 157.0
+offset_right = 689.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 60
+text = "Instrucciones 
+Nivel 2"
+label_settings = SubResource("LabelSettings_cgexd")
+horizontal_alignment = 1
+
+[node name="Fondo-chico-02" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(-137, 6)
+scale = Vector2(0.484328, 0.484328)
+texture = ExtResource("1_x1581")
+centered = false
+
+[node name="jugar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 429.0
+offset_right = 645.0
+offset_bottom = 460.0
+theme = SubResource("Theme_7y546")
+text = "Jugar "
+script = ExtResource("4_gdtwp")
+
+[connection signal="pressed" from="jugar" to="jugar" method="_on_nivel2_pressed"]

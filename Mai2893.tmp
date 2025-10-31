@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://h4e1fij4ej7d"]
+
+[ext_resource type="PackedScene" uid="uid://cj26u3cu6bus0" path="res://Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_fos0i"]
+[ext_resource type="PackedScene" uid="uid://tbebn3ogsxgp" path="res://HUD.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://ca4uln8ivn87m" path="res://SpawnObjects.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://7fjm22x1v2kg" path="res://assets/FONDO-01.jpg" id="4_cm0pq"]
+[ext_resource type="AudioStream" uid="uid://ba5pv5bfomnqx" path="res://assets/musi/mystery-music-loop-226835.mp3" id="6_3dxm6"]
+
+[node name="Main" type="Node2D"]
+z_index = -1
+
+[node name="Fondo-chico-01" type="Sprite2D" parent="."]
+position = Vector2(617, 326)
+scale = Vector2(0.482836, 0.482836)
+texture = ExtResource("1_fos0i")
+
+[node name="Fondo-01" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(680, 340)
+scale = Vector2(0.605346, 0.637584)
+texture = ExtResource("4_cm0pq")
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(539, 537)
+
+[node name="HUD" parent="." instance=ExtResource("2")]
+layout_direction = 2
+offset_left = 139.0
+offset_top = 38.0
+offset_right = 139.0
+offset_bottom = 38.0
+win_scene = null
+game_over_scene = null
+
+[node name="SpawnObjects" parent="." instance=ExtResource("3")]
+
+[node name="Mystery-music-loop-226835" type="AudioStreamPlayer2D" parent="."]
+visible = false
+position = Vector2(235, 233)
+stream = ExtResource("6_3dxm6")
+volume_db = 0.937
+autoplay = true
+
+[node name="Node" type="Node" parent="Mystery-music-loop-226835"]

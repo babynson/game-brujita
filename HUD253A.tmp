@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=3 uid="uid://tbebn3ogsxgp"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="2_wkqw2"]
+[ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="3_hmdwk"]
+
+[sub_resource type="Theme" id="Theme_qyu62"]
+default_font = ExtResource("2_wkqw2")
+default_font_size = 30
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+win_scene = null
+game_over_scene = null
+player_path = null
+
+[node name="Message" type="Label" parent="."]
+physics_interpolation_mode = 1
+layout_mode = 0
+offset_left = 745.0
+offset_top = -132.0
+offset_right = 872.0
+offset_bottom = -81.0
+theme_override_fonts/font = ExtResource("3_hmdwk")
+theme_override_font_sizes/font_size = 40
+text = "Genial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOver" type="Label" parent="."]
+layout_mode = 2
+offset_left = 417.0
+offset_top = -157.0
+offset_right = 873.0
+offset_bottom = -106.0
+theme_override_font_sizes/font_size = 37
+text = "Perdiste"
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 133.0
+offset_top = 22.0
+offset_right = -19.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="Row" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+theme = SubResource("Theme_qyu62")
+theme_override_constants/separation = 50
+
+[node name="Score" type="Label" parent="Margin/Row"]
+clip_contents = true
+layout_mode = 2
+text = "Puntos: 0"
+
+[node name="Lives" type="Label" parent="Margin/Row"]
+layout_mode = 2
+text = "vidas: 4"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoalLabel" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Buenos:"
+
+[node name="GoalBar" type="ProgressBar" parent="Panel/HBoxContainer"]
+layout_mode = 2

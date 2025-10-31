@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh7i34i82yok6"]
+
+[ext_resource type="Script" path="res://scripts/SpawnObjects.gd" id="1_4ou03"]
+
+[node name="SpawnObjects" type="Node2D"]
+script = ExtResource("1_4ou03")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

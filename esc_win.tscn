@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://bfvwwj0awqu31"]
+
+[ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_ck7qq"]
+[ext_resource type="Texture2D" uid="uid://op6x0rmdb1cn" path="res://assets/F_perdiste.png" id="2_xvw3q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cgexd"]
+font_size = 26
+outline_color = Color(0.12549, 1, 1, 1)
+shadow_size = 3
+shadow_color = Color(0, 0.886275, 0.231373, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uba74"]
+bg_color = Color(0.0980524, 0.564451, 0.551976, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ik3a1"]
+bg_color = Color(0.169912, 0.690472, 0.602925, 1)
+border_width_left = 5
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 14
+shadow_size = 1
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_il2j5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ck7qq")
+expand_mode = 1
+
+[node name="FondoInstrucciones" type="Sprite2D" parent="."]
+position = Vector2(603, 318)
+texture = ExtResource("2_xvw3q")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+clip_contents = true
+layout_direction = 1
+layout_mode = 0
+offset_left = 307.0
+offset_top = 246.0
+offset_right = 943.0
+offset_bottom = 607.0
+theme_override_font_sizes/font_size = 60
+text = "Ganaste pasaste al otro nivel 
+
+"
+label_settings = SubResource("LabelSettings_cgexd")
+horizontal_alignment = 1
+
+[node name="play" type="Button" parent="."]
+layout_mode = 0
+offset_left = 593.0
+offset_top = 423.0
+offset_right = 711.0
+offset_bottom = 470.0
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 0
+theme_override_font_sizes/font_size = 28
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uba74")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ik3a1")
+text = "Jugar"
+icon = SubResource("CanvasTexture_il2j5")
+
+[node name="Fondo-chico-02" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(-137, 6)
+scale = Vector2(0.484328, 0.484328)
+texture = ExtResource("1_ck7qq")
+centered = false
