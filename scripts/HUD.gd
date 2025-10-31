@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var message_label2: Label = $Message2
 
 var score: int = 0
-var lives: int = 5
+var lives: int = 15
 var good_collected: int = 0
 
 signal score_changed(new_score: int)
