@@ -12,9 +12,6 @@ var score: int = 0
 var lives: int = 5
 var good_collected: int = 0
 
-
-
-
 signal score_changed(new_score: int)
 signal lives_changed(new_lives: int)
 signal game_over
@@ -45,7 +42,9 @@ func _process(delta: float) -> void:
 # Puntos y vidas
 func add_point() -> void:
 	score += 1
+	print("entramos a add_point")
 	score_changed.emit(score)
+	print(score)
 	_show_message(genial)              # Mostrar “¡Genial!” al sumar punto
 
 func lose_life() -> void:
