@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" path="res://Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://g4mmx2ihixwp" path="res://assets/FONDO-JUEGO-nivel1.jpg" id="1_ip2g2"]
-[ext_resource type="PackedScene" path="res://HUD.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://SpawnObjects.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://ckh3lp2lqyx21" path="res://HUD.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://dppcudviklale" path="res://SpawnObjects.tscn" id="3"]
 [ext_resource type="AudioStream" uid="uid://ba5pv5bfomnqx" path="res://assets/musi/mystery-music-loop-226835.mp3" id="6_3dxm6"]
 
 [node name="Main" type="Node2D"]

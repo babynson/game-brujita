@@ -12,6 +12,9 @@ var score: int = 0
 var lives: int = 5
 var good_collected: int = 0
 
+
+
+
 signal score_changed(new_score: int)
 signal lives_changed(new_lives: int)
 signal game_over
