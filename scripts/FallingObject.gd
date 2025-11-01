@@ -32,6 +32,7 @@ func _on_body_entered(body: Node) -> void:
 				print("🍾 Sumo una botella. Total:", body.botella)
 				
 			body.add_point()
+			body._check_level_complete()   # <--- esta línea
 		elif not is_good and body.has_method("lose_life"):
 			print("atrepe el malo")
 			body.lose_life()

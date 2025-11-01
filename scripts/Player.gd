@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var required_goods := 3        # necesarios para pasar de nivel
+@export var required_goods := 30        # necesarios para pasar de nivel
 @export var speed: float = 280.0
 
 @export var genial: String = "¡Genial! +1"   # mensaje para buenos
@@ -111,3 +111,10 @@ func _play(stream: AudioStream) -> void:
 		return
 	audio_player.stream = stream
 	audio_player.play()
+
+#chequear nivel completo 
+func _check_level_complete() -> void:
+	if corazon >= 3 and botella >= 2 and estrella >= 4:
+		print("🎉 Nivel completo, pasamos al siguiente!")
+		level_complete.emit()   # usa tu señal existente
+		

@@ -33,6 +33,9 @@ func _ready() -> void:
 		_on_corazon_changed(player.corazon)
 		_on_estrella_changed(player.estrella)
 		_on_botella_changed(player.botella)
+		
+		player.level_complete.connect(_on_player_level_complete)
+		
 
 func _on_item_collected(tipo: String, count: int) -> void:
 	match tipo:
@@ -65,7 +68,7 @@ func _on_score_changed(new_score: int) -> void:
 	
 	
 	#cuadno llego a 2 me manda a cambiar de escena 
-	if new_score >= 6:
+	if new_score >= 30:
 		audio_player.stream = nivel_ok_Sound
 		audio_player.play()
 		call_deferred("cambiar_ganaste")
