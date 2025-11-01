@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://tkhclk2o55sl"]
+[gd_scene load_steps=9 format=3 uid="uid://tkhclk2o55sl"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_j4ewn"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_ovttw"]
 [ext_resource type="Script" path="res://jugar.gd" id="3_ffgmq"]
 [ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="3_vsq0t"]
+[ext_resource type="AudioStream" uid="uid://c80m654b1h8cw" path="res://assets/musi/sonido-pasodenivel.mp3" id="5_jukyj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cgexd"]
 font_size = 26
@@ -91,5 +92,8 @@ offset_bottom = 460.0
 theme = SubResource("Theme_7y546")
 text = "pasar al nievel 2 "
 script = ExtResource("3_ffgmq")
+
+[node name="Sonido-pasodenivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jukyj")
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_nivel2_pressed"]

@@ -2,7 +2,8 @@ extends Control
 
 @onready var score_label: Label = $Margin/Row/Score
 @onready var lives_label: Label = $Margin/Row/Lives
-
+@export var nivel_ok_Sound: AudioStream = preload("res://assets/musi/nivel-logrado.mp3")
+@onready var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
 #cargo variables para cambiar de escenas 
 @export var win_scene: String = "res://win_scene.tscn"
 @export var game_over_scene: String = "res://game_over_scene.tscn"
@@ -11,6 +12,8 @@ extends Control
 
 func _ready() -> void:
 	var player := get_tree().get_first_node_in_group("player")
+	#sonido
+	add_child(audio_player)
 	if player:
 		player.score_changed.connect(_on_score_changed)
 		player.lives_changed.connect(_on_lives_changed)
@@ -23,6 +26,8 @@ func _on_score_changed(new_score: int) -> void:
 	
 	#cuadno llego a 2 me manda a cambiar de escena 
 	if new_score >= 6:
+		audio_player.stream = nivel_ok_Sound
+		audio_player.play()
 		call_deferred("cambiar_ganaste")
 
 func _on_lives_changed(new_lives: int) -> void:

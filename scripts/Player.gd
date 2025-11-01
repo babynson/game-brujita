@@ -1,8 +1,15 @@
 
 extends CharacterBody2D
 
-@export var required_goods := 5  # cantidad necesaria para pasar de nivel
+@export var required_goods := 3  # cantidad necesaria para pasar de nivel
 @export var speed: float = 280.0
+
+#sumo sonido
+@export var point_sound: AudioStream = preload("res://assets/musi/cach-ok.mp3")
+@export var point_sound2: AudioStream = preload("res://assets/musi/fallo.mp3")
+@export var nivel_ok_Sound: AudioStream = preload("res://assets/musi/fallo.mp3")
+@onready var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
+
 
 var score: int = 0
 var lives: int = 5
@@ -16,6 +23,8 @@ signal level_complete
 
 func _ready() -> void:
 	add_to_group("player")
+	#sonido
+	add_child(audio_player)
 
 func _process(delta: float) -> void: 
 	var dir := 0.0
@@ -33,6 +42,9 @@ func add_point() -> void:
 	score += 1
 	print("sumovida:")
 	print(score)
+	#sumo sonido
+	audio_player.stream = point_sound
+	audio_player.play()
 	score_changed.emit(score)
 	
 
@@ -41,6 +53,9 @@ func lose_life() -> void:
 	lives_changed.emit(lives)
 	print("pierdo una vida:")
 	print(lives)
+	#sumo sonido malo
+	audio_player.stream = point_sound2
+	audio_player.play()
 	if lives <= 0:
 		print("DEBUG: Game Over - emitiendo señal")
 		game_over.emit()
