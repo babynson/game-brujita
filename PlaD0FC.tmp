@@ -9,6 +9,13 @@ size = Vector2(106, 32)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(240, 420)
 script = ExtResource("1")
+required_goods = null
+speed = null
+genial = null
+ouch = null
+point_sound = null
+point_sound2 = null
+nivel_ok_Sound = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
@@ -20,21 +27,11 @@ shape = SubResource("RectangleShape2D_1")
 texture = ExtResource("2_kpjcp")
 
 [node name="Message" type="Label" parent="."]
-offset_left = -71.0
-offset_top = -117.0
-offset_right = 45.0
-offset_bottom = -62.0
-theme_override_colors/font_color = Color(0.85098, 0.607843, 0.231373, 1)
-theme_override_colors/font_shadow_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
-theme_override_font_sizes/font_size = 40
+offset_right = 40.0
+offset_bottom = 23.0
 text = "genial"
 
 [node name="Message2" type="Label" parent="."]
-offset_left = -73.0
-offset_top = -118.0
-offset_right = 22.0
-offset_bottom = -63.0
-theme_override_colors/font_color = Color(0.945098, 0.192157, 0.0901961, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+offset_right = 40.0
+offset_bottom = 23.0
 text = "ouch"

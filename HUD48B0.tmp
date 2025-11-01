@@ -15,6 +15,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+nivel_ok_Sound = null
+win_scene = null
+game_over_scene = null
 
 [node name="Objetos" type="VBoxContainer" parent="."]
 clip_contents = true
@@ -31,10 +34,6 @@ size_flags_horizontal = 8
 [node name="lista" type="VBoxContainer" parent="Objetos"]
 layout_mode = 2
 
-[node name="Corazon" type="Label" parent="Objetos/lista"]
-layout_mode = 2
-text = "corazon "
-
 [node name="1" type="HBoxContainer" parent="Objetos/lista"]
 layout_mode = 2
 
@@ -42,6 +41,10 @@ layout_mode = 2
 layout_mode = 2
 texture = ExtResource("2_foonm")
 stretch_mode = 3
+
+[node name="Corazon" type="Label" parent="Objetos/lista/1"]
+layout_mode = 2
+text = "corazon "
 
 [node name="2" type="HBoxContainer" parent="Objetos/lista"]
 layout_mode = 2
