@@ -1,5 +1,6 @@
 
 extends Node2D
+@export var tipo := "corazon"  # puede ser "estrella" o "botella"
 
 @export var good_objects: Array[PackedScene] = [
 	preload("res://GoodObject1.tscn"),
@@ -55,21 +56,22 @@ func _choose_object() -> PackedScene:
 	var value := rng.randf()
 	if value < 0.7 and not good_objects.is_empty():
 		var index := rng.randi_range(0, good_objects.size() - 1)
-		print("muestro objetos buenos:")
+		print("lanza objetos buenos numero:")
 		print(index)
+		
 		return good_objects[index]
 	else:
 		if bad_objects.is_empty():
 			return null
 		var index := rng.randi_range(0, bad_objects.size() - 1)
-		print("objeto malo:")
+		print("lanza objeto malo numero:")
 		print(index)
 		return bad_objects[index]
 
 # NUEVO: handlers
 func _on_good_collected(count: int, total: int) -> void:
-	# Opcional: debug o lógica adicional
-	# print("Objetos buenos:", count, "/", total)
+	#Opcional: debug o lógica adicional
+	print("Objetos buenos:", count, "/", total)
 	pass
 
 func _on_level_complete() -> void:

@@ -28,7 +28,7 @@ offset_bottom = 155.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 
-[node name="lista" type="HBoxContainer" parent="Objetos"]
+[node name="lista" type="VBoxContainer" parent="Objetos"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Objetos/lista"]
@@ -40,28 +40,22 @@ stretch_mode = 3
 layout_mode = 2
 text = "0"
 
-[node name="lista2" type="HBoxContainer" parent="Objetos"]
-layout_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Objetos/lista2"]
+[node name="TextureRect2" type="TextureRect" parent="Objetos/lista"]
 layout_mode = 2
 texture = ExtResource("3_xq6g4")
 stretch_mode = 3
 
-[node name="Estrella" type="Label" parent="Objetos/lista2"]
+[node name="Estrella" type="Label" parent="Objetos/lista"]
 layout_mode = 2
 text = "0"
 
-[node name="lista3" type="HBoxContainer" parent="Objetos"]
-layout_mode = 2
-
-[node name="TextureRect3" type="TextureRect" parent="Objetos/lista3"]
+[node name="TextureRect3" type="TextureRect" parent="Objetos/lista"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("4_p18v6")
 stretch_mode = 3
 
-[node name="Botella" type="Label" parent="Objetos/lista3"]
+[node name="Botella" type="Label" parent="Objetos/lista"]
 layout_mode = 2
 text = "0
 "

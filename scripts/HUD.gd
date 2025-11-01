@@ -8,6 +8,9 @@ extends Control
 @export var win_scene: String = "res://win_scene.tscn"
 @export var game_over_scene: String = "res://game_over_scene.tscn"
 
+@onready var corazon_label: Label = $Objetos/lista/Corazon
+@onready var estrella_label: Label = $Objetos/lista2/Estrella
+@onready var botella_label: Label = $Objetos/lista3/Botella
 #signal game_over
 
 func _ready() -> void:
@@ -17,12 +20,49 @@ func _ready() -> void:
 	if player:
 		player.score_changed.connect(_on_score_changed)
 		player.lives_changed.connect(_on_lives_changed)
+		player.corazon_changed.connect(_on_corazon_changed)
+		player.estrella_changed.connect(_on_estrella_changed)
+		player.botella_changed.connect(_on_botella_changed)	
+		
+		
+		player.item_collected.connect(_on_item_collected)
+		
 		player.game_over.connect(_on_game_over)
 		_on_score_changed(player.score)
 		_on_lives_changed(player.lives)
+		_on_corazon_changed(player.corazon)
+		_on_estrella_changed(player.estrella)
+		_on_botella_changed(player.botella)
+
+func _on_item_collected(tipo: String, count: int) -> void:
+	match tipo:
+		"corazon":
+			corazon_label.text = "Corazones: %d" % count
+		"estrella":
+			estrella_label.text = "Estrellas: %d" % count
+		"botella":
+			botella_label.text = "Botellas: %d" % count
+
+func _update_counters(player: Node) -> void:
+	if player.has_method("_ready") or true:
+		corazon_label.text  = "Corazones: %d" % (player.corazon if "corazon" in player else 0)
+		estrella_label.text = "Estrellas: %d" % (player.estrella if "estrella" in player else 0)
+		botella_label.text  = "Botellas: %d" % (player.botella if "botella" in player else 0)
+					
+
+func _on_corazon_changed(new_corazon: int) -> void:
+	corazon_label.text = "corazon: %d" % new_corazon
+
+func _on_estrella_changed(new_estrella: int) -> void:
+	estrella_label.text = "estrella: %d" % new_estrella
+	
+func _on_botella_changed(new_botella: int) -> void:
+	botella_label.text = "botella: %d" % new_botella	
 
 func _on_score_changed(new_score: int) -> void:
 	score_label.text = "Puntos: %d" % new_score
+
+	
 	
 	#cuadno llego a 2 me manda a cambiar de escena 
 	if new_score >= 6:

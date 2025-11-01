@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bh7i34i82yok6" path="res://SpawnObjects2.tscn" id="4_jg2xq"]
 [ext_resource type="AudioStream" uid="uid://ba5pv5bfomnqx" path="res://assets/musi/mystery-music-loop-226835.mp3" id="6_rva0c"]
 
-[node name="Main" type="Node2D"]
+[node name="Main-level2" type="Node2D"]
 z_index = -1
 
 [node name="Fondo-chico-01" type="Sprite2D" parent="."]

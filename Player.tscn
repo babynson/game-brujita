@@ -10,14 +10,19 @@ size = Vector2(106, 32)
 position = Vector2(240, 420)
 script = ExtResource("1")
 
+[node name="Jugador-03" type="Sprite2D" parent="."]
+texture = ExtResource("2_kpjcp")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShapeolla" type="CollisionShape2D" parent="."]
 position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_1")
 
-[node name="Jugador-03" type="Sprite2D" parent="."]
-texture = ExtResource("2_kpjcp")
+[node name="inventario" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="inventario"]
+visible = false
 
 [node name="Message" type="Label" parent="."]
 offset_left = -71.0

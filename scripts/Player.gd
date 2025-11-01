@@ -15,9 +15,23 @@ extends CharacterBody2D
 @export var fail_sound: AudioStream  = preload("res://assets/musi/fallo.mp3")
 #@export var level_ok_sound: AudioStream = preload("res://assets/musi/level_ok.mp3") # poné el que quieras
 
+@export var tipo := "corazon"  # puede ser "estrella" o "botella"
+
+
 var score: int = 0
 var lives: int = 5
 var good_collected: int = 0
+
+var corazon: int=0
+var estrella: int=0
+var botella: int=0
+
+signal item_collected(tipo: String, count: int)  # agrego para recolectar "corazon" | "estrella" | "botella"
+
+signal corazon_changed(new_corazon: int)
+signal estrella_changed(new_estrella: int)
+signal botella_changed(new_botella: int)
+
 
 signal score_changed(new_score: int)
 signal lives_changed(new_lives: int)
@@ -64,6 +78,8 @@ func lose_life() -> void:
 func _on_catch_area_area_entered(area: Area2D) -> void:
 	# Si el área que entró pertenece a un objeto bueno/malo:
 	if area.is_in_group("good_objects"):
+	
+		print ("agarre objeto-bueno:")		
 		add_point()
 		good_collected += 1
 		area.queue_free()
@@ -73,6 +89,7 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 			level_complete.emit()
 
 	elif area.is_in_group("bad_objects"):
+		print("agarre objeto malo:")	
 		lose_life()
 		area.queue_free()
 

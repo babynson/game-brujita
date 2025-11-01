@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ca4uln8ivn87m" path="res://SpawnObjects.tscn" id="3"]
 [ext_resource type="AudioStream" uid="uid://ba5pv5bfomnqx" path="res://assets/musi/mystery-music-loop-226835.mp3" id="6_3dxm6"]
 
-[node name="Main2" type="Node2D"]
+[node name="Main-level1" type="Node2D"]
 z_index = -1
 
 [node name="Fondo-chico-01" type="Sprite2D" parent="."]
@@ -30,7 +30,9 @@ offset_top = 38.0
 offset_right = 139.0
 offset_bottom = 38.0
 
-[node name="SpawnObjects" parent="." instance=ExtResource("3")]
+[node name="items" type="Node" parent="."]
+
+[node name="SpawnObjects" parent="items" instance=ExtResource("3")]
 
 [node name="Mystery-music-loop-226835" type="AudioStreamPlayer2D" parent="."]
 visible = false
@@ -38,5 +40,3 @@ position = Vector2(235, 233)
 stream = ExtResource("6_3dxm6")
 volume_db = 0.937
 autoplay = true
-
-[node name="Node" type="Node" parent="Mystery-music-loop-226835"]
