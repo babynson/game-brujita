@@ -19,7 +19,7 @@ position = Vector2(539, 537)
 
 [node name="HUD" parent="." instance=ExtResource("4_2nv2p")]
 layout_direction = 2
-offset_left = 139.0
+offset_left = 46.0
 offset_top = 38.0
 offset_right = 139.0
 offset_bottom = 38.0
