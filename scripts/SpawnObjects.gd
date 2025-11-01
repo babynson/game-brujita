@@ -55,11 +55,15 @@ func _choose_object() -> PackedScene:
 	var value := rng.randf()
 	if value < 0.7 and not good_objects.is_empty():
 		var index := rng.randi_range(0, good_objects.size() - 1)
+		print("muestro objetos buenos:")
+		print(index)
 		return good_objects[index]
 	else:
 		if bad_objects.is_empty():
 			return null
 		var index := rng.randi_range(0, bad_objects.size() - 1)
+		print("objeto malo:")
+		print(index)
 		return bad_objects[index]
 
 # NUEVO: handlers

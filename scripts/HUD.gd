@@ -1,78 +1,52 @@
 extends Control
 
-# @export var required_goods: int = 5
-# @export var speed: float = 280.0
-# @export var genial: String = "¡Genial! +1"
-# @export var ouch: String = "¡Ouch! -1"
+@onready var score_label: Label = $Margin/Row/Score
+@onready var lives_label: Label = $Margin/Row/Lives
 
-# @onready var message_label: Label = $Message
-# @onready var message_label2: Label = $Message2
+#cargo variables para cambiar de escenas 
+@export var win_scene: String = "res://win_scene.tscn"
+@export var game_over_scene: String = "res://game_over_scene.tscn"
 
-var score: int = 0
-var lives: int = 15
-# var good_collected: int = 0
-@onready var score_label: Label = $Margin/Row/Score   # o el path correcto de tu Label
-@onready var lives_label: Label = $Margin/Row/Lives   # opcional, si mostrás vidas también
-
-var velocity := Vector2.ZERO
-
-signal lives_changed(new_lives: int)
-signal game_over
-signal level_complete
-signal good_collected_changed(count: int, total: int)
+#signal game_over
 
 func _ready() -> void:
-	# Buscar el nodo del player (usa el grupo que definiste)
 	var player := get_tree().get_first_node_in_group("player")
 	if player:
 		player.score_changed.connect(_on_score_changed)
-
-
-		# Inicializar labels con valores actuales
+		player.lives_changed.connect(_on_lives_changed)
+		player.game_over.connect(_on_game_over)
 		_on_score_changed(player.score)
+		_on_lives_changed(player.lives)
 
-# func add_point() -> void:
-# 	score += 1
-# 	score_changed.emit(score)
-# 	_show_message(genial)
-
-# func lose_life() -> void:
-# 	lives -= 1
-# 	lives_changed.emit(lives)
-# 	_show_message2(ouch)
-# 	if lives <= 0:
-# 		game_over.emit()
-
-# func _on_body_entered(body: Node) -> void:
-# 	if body.is_in_group("good_objects"):
-# 		good_collected += 1
-# 		add_point()
-# 		body.queue_free()
-# 		good_collected_changed.emit(good_collected, required_goods)
-# 		if good_collected >= required_goods:
-# 			level_complete.emit()
-
-# 	if body.is_in_group("bad_objects"):
-# 		lose_life()
-# 		body.queue_free()
-
-# func _show_message(text: String) -> void:
-# 	if message_label == null: return
-# 	message_label.text = text
-# 	message_label.visible = true
-# 	await get_tree().create_timer(1.1).timeout
-# 	message_label.visible = false
-
-# func _show_message2(text: String) -> void:
-# 	if message_label2 == null: return
-# 	message_label2.text = text
-# 	message_label2.visible = true
-# 	await get_tree().create_timer(1.1).timeout
-# 	message_label2.visible = false
-
-# --- Receptor de la señal de score
 func _on_score_changed(new_score: int) -> void:
-	score = new_score
-	if score_label:
-		score_label.text = "Puntos: %d" % score
-	print("HUD actualizó el score:", score)
+	score_label.text = "Puntos: %d" % new_score
+	
+	#cuadno llego a 2 me manda a cambiar de escena 
+	if new_score >= 6:
+		call_deferred("cambiar_ganaste")
+
+func _on_lives_changed(new_lives: int) -> void:
+	lives_label.text = "Vidas: %d" % new_lives
+	
+	#Cuadno llego a 0 me manda a cambiar de escena
+	if new_lives <= 0:
+		call_deferred("game_over_scene")
+
+func _on_game_over() -> void:
+	call_deferred("cambiar_perdiste")
+	
+#llama a la escena de gane 
+func cambiar_ganaste() -> void:
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file(win_scene)
+	
+#llama a la escena de perder
+func cambiar_perdiste() -> void:
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file(game_over_scene)
+	
+func _on_good_collected(count: int, total: int):
+	$Label.text = "Objetos: %d / %d" % [count, total]
+
+func _on_player_level_complete():
+	get_tree().change_scene_to_file("res://nivel2.tscn")
