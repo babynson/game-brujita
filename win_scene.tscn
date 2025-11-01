@@ -45,6 +45,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Sonido-pasodenivel" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_jukyj")
+
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -92,8 +95,5 @@ offset_bottom = 460.0
 theme = SubResource("Theme_7y546")
 text = "pasar al nievel 2 "
 script = ExtResource("3_ffgmq")
-
-[node name="Sonido-pasodenivel" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_jukyj")
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_nivel2_pressed"]

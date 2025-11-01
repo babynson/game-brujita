@@ -42,12 +42,12 @@ func _on_game_over() -> void:
 	
 #llama a la escena de gane 
 func cambiar_ganaste() -> void:
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file(win_scene)
 	
 #llama a la escena de perder
 func cambiar_perdiste() -> void:
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(1.5).timeout
 	get_tree().change_scene_to_file(game_over_scene)
 	
 func _on_good_collected(count: int, total: int):
