@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mpbg1mixb2ks"]
+[gd_scene load_steps=10 format=3 uid="uid://mpbg1mixb2ks"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_x1581"]
 [ext_resource type="Texture2D" uid="uid://3u273sjxqa77" path="res://assets/FONDO-instrucciones-nivel2.jpg" id="2_k2bre"]
@@ -7,19 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://c6qv7ha5kk20d" path="res://assets/ojo.png" id="5_uh5yx"]
 [ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="6_l1arr"]
 [ext_resource type="Texture2D" uid="uid://c8vjhjhakisr3" path="res://assets/calabaza.png" id="7_ie5f6"]
-
-[sub_resource type="FontFile" id="FontFile_rvjj1"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_cgexd"]
-font_size = 26
-outline_color = Color(0.12549, 1, 1, 1)
-shadow_size = 3
-shadow_color = Color(0, 0.886275, 0.231373, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -69,6 +56,16 @@ position = Vector2(596.625, 321.25)
 scale = Vector2(0.623945, 0.605093)
 texture = ExtResource("2_k2bre")
 
+[node name="nivel 2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 404.0
+offset_top = 136.0
+offset_right = 601.0
+offset_bottom = 219.0
+theme_override_font_sizes/font_size = 60
+text = "Nivel 2
+"
+
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 371.0
@@ -77,38 +74,6 @@ offset_right = 668.0
 offset_bottom = 313.0
 theme_override_font_sizes/font_size = 30
 text = "Crear una Pocima con:"
-horizontal_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 371.0
-offset_top = 254.0
-offset_right = 724.0
-offset_bottom = 426.0
-theme_override_fonts/normal_font = SubResource("FontFile_rvjj1")
-theme_override_font_sizes/bold_italics_font_size = 40
-theme_override_font_sizes/bold_font_size = 30
-bbcode_enabled = true
-text = "OBJETIVO 1 : 
-TIENES QUE CREAR UNA POCIMA CON 
-"
-fit_content = true
-custom_effects = [null, null, null, null, null, null, null, null]
-
-[node name="Label" type="Label" parent="."]
-texture_filter = 2
-clip_contents = true
-layout_direction = 1
-layout_mode = 0
-offset_left = 283.0
-offset_top = 157.0
-offset_right = 726.0
-offset_bottom = 232.0
-theme_override_font_sizes/font_size = 60
-text = "Instrucciones 
-Nivel 2"
-label_settings = SubResource("LabelSettings_cgexd")
 horizontal_alignment = 1
 
 [node name="Fondo-chico-02" type="Sprite2D" parent="."]

@@ -1,0 +1,172 @@
+[gd_scene load_steps=13 format=3 uid="uid://boeulkxhxr7ba"]
+
+[ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_wi8ga"]
+[ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_wcfpy"]
+[ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="3_vsody"]
+[ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="4_d7vr2"]
+[ext_resource type="Texture2D" uid="uid://i5lo5o4gic40" path="res://assets/charly.png" id="4_jroqk"]
+[ext_resource type="Script" path="res://jugar.gd" id="5_pt7lk"]
+[ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="6_d45je"]
+[ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="7_0nf5f"]
+[ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="8_xlu15"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cgexd"]
+font_size = 26
+outline_color = Color(0.12549, 1, 1, 1)
+shadow_size = 3
+shadow_color = Color(0, 0.886275, 0.231373, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
+resource_name = "boton_verde"
+bg_color = Color(0, 0.7, 0.56, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 10
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_7y546"]
+default_font_size = 30
+Button/fonts/font = ExtResource("4_d7vr2")
+Button/styles/focus = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/hover = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/normal = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/pressed = null
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wi8ga")
+expand_mode = 1
+
+[node name="FondoInstrucciones" type="Sprite2D" parent="."]
+position = Vector2(613, 339)
+texture = ExtResource("2_wcfpy")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 149.0
+offset_right = 472.0
+offset_bottom = 589.0
+texture = ExtResource("3_vsody")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 208.0
+offset_right = 1172.0
+offset_bottom = 648.0
+texture = ExtResource("4_jroqk")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 230.0
+offset_right = 845.0
+offset_bottom = 341.0
+text = "En Este nivel necesito armar una pocima 
+para charly que esta muy triste y esta un poco 
+perdido ME AYUDAS? "
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+clip_contents = true
+layout_direction = 1
+layout_mode = 0
+offset_left = 339.0
+offset_top = 137.0
+offset_right = 610.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 80
+text = "Nivel 1"
+label_settings = SubResource("LabelSettings_cgexd")
+horizontal_alignment = 1
+
+[node name="Fondo-chico-02" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(-137, 6)
+scale = Vector2(0.484328, 0.484328)
+texture = ExtResource("1_wi8ga")
+centered = false
+
+[node name="jugar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 441.0
+offset_right = 838.0
+offset_bottom = 481.0
+theme = SubResource("Theme_7y546")
+text = "Jugar "
+script = ExtResource("5_pt7lk")
+
+[node name="corazon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 508.0
+offset_top = 331.0
+offset_right = 556.0
+offset_bottom = 379.0
+texture = ExtResource("6_d45je")
+
+[node name="Label3" type="Label" parent="corazon"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 52.0
+offset_right = 79.0
+offset_bottom = 75.0
+text = "3 corazones "
+
+[node name="botella" type="TextureRect" parent="corazon"]
+layout_mode = 0
+offset_left = 272.0
+offset_right = 320.0
+offset_bottom = 48.0
+texture = ExtResource("7_0nf5f")
+
+[node name="botella" type="Label" parent="corazon/botella"]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 55.0
+offset_right = 100.0
+offset_bottom = 104.0
+text = "3 pociones de ver
+ "
+
+[node name="estrella" type="TextureRect" parent="corazon"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -4.0
+offset_right = 179.0
+offset_bottom = 44.0
+texture = ExtResource("8_xlu15")
+
+[node name="estrella" type="Label" parent="corazon/estrella"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 58.0
+offset_right = 60.0
+offset_bottom = 81.0
+text = "4 estrellas"
+
+[connection signal="pressed" from="jugar" to="jugar" method="_on_play_pressed"]

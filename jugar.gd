@@ -4,6 +4,10 @@ extends Button
 func _on_play_pressed():
 	get_tree().change_scene_to_file("res://Main.tscn")
 
+func _on_empezar_pressed():
+	get_tree().change_scene_to_file("res://nivel1.tscn")
+
+
 # boton instrucciones
 func _on_instruccion_pressed():
 	get_tree().change_scene_to_file("res://instrucciones.tscn")

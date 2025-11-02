@@ -153,5 +153,5 @@ offset_right = 508.0
 offset_bottom = 649.0
 texture = ExtResource("7_ayb14")
 
-[connection signal="pressed" from="jugar" to="jugar" method="_on_nivel2_pressed"]
+[connection signal="pressed" from="jugar" to="jugar" method="_on_empezar_pressed"]
 [connection signal="pressed" from="jugar2" to="jugar2" method="_on_salir_pressed"]
