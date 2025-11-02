@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsned3nlf8pay"]
+
+[ext_resource type="PackedScene" uid="uid://b51ejwfyvquku" path="res://FallingObject.tscn" id="1_l0gin"]
+[ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="2_frcxl"]
+
+[node name="GoodObject" instance=ExtResource("1_l0gin")]
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+modulate = Color(0.6, 1, 0.6, 1)
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(-2, 8)
+
+[node name="Objetos-02" type="Sprite2D" parent="." index="2"]
+position = Vector2(-2, 9)
+scale = Vector2(1.14167, 1.14167)
+texture = ExtResource("2_frcxl")

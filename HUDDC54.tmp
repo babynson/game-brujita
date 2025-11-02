@@ -1,20 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://tbebn3ogsxgp"]
+[gd_scene load_steps=6 format=3 uid="uid://ync8evin8kvd"]
 
-[ext_resource type="Script" path="res://scripts/HUD.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="2_foonm"]
-[ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="3_xq6g4"]
-[ext_resource type="Texture2D" uid="uid://c8vjhjhakisr3" path="res://assets/calabaza.png" id="4_1xqpa"]
+[ext_resource type="Script" path="res://hud_2.gd" id="1_a11q8"]
+[ext_resource type="Texture2D" uid="uid://c6qv7ha5kk20d" path="res://assets/ojo.png" id="2_6asr3"]
+[ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="3_csr80"]
+[ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="4_q64jw"]
 
 [sub_resource type="Theme" id="Theme_qyu62"]
 
-[node name="HUD" type="Control"]
+[node name="HUD2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1")
+script = ExtResource("1_a11q8")
+nivel_ok_Sound = null
+win_scene = null
+game_over_scene = null
 
 [node name="Objetos" type="VBoxContainer" parent="."]
 clip_contents = true
@@ -33,10 +36,10 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Objetos/lista"]
 layout_mode = 2
-texture = ExtResource("2_foonm")
+texture = ExtResource("2_6asr3")
 stretch_mode = 3
 
-[node name="Corazon" type="Label" parent="Objetos/lista"]
+[node name="ojo" type="Label" parent="Objetos/lista"]
 layout_mode = 2
 text = "0"
 
@@ -45,10 +48,10 @@ layout_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="Objetos/lista2"]
 layout_mode = 2
-texture = ExtResource("3_xq6g4")
+texture = ExtResource("3_csr80")
 stretch_mode = 3
 
-[node name="Estrella" type="Label" parent="Objetos/lista2"]
+[node name="caramelo" type="Label" parent="Objetos/lista2"]
 layout_mode = 2
 text = "0"
 
@@ -58,10 +61,10 @@ layout_mode = 2
 [node name="TextureRect3" type="TextureRect" parent="Objetos/lista3"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-texture = ExtResource("4_1xqpa")
+texture = ExtResource("4_q64jw")
 stretch_mode = 3
 
-[node name="Botella" type="Label" parent="Objetos/lista3"]
+[node name="Botella2" type="Label" parent="Objetos/lista3"]
 layout_mode = 2
 text = "0
 "

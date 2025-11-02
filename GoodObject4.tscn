@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://chyd2bdf11mte"]
+
+[ext_resource type="PackedScene" uid="uid://b51ejwfyvquku" path="res://FallingObject.tscn" id="1_uut61"]
+[ext_resource type="Texture2D" uid="uid://c8vjhjhakisr3" path="res://assets/calabaza.png" id="2_n3r3m"]
+
+[node name="GoodObject" instance=ExtResource("1_uut61")]
+
+[node name="Sprite2D" parent="." index="0"]
+visible = false
+modulate = Color(0.6, 1, 0.6, 1)
+texture = ExtResource("2_n3r3m")
+
+[node name="Objetos-02" type="Sprite2D" parent="." index="2"]
+position = Vector2(-2, -6)
+scale = Vector2(1.37083, 1.37083)
+texture = ExtResource("2_n3r3m")

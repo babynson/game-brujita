@@ -86,6 +86,18 @@ text = "Instrucciones
 "
 script = ExtResource("3_n00if")
 
+[node name="escena 2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ca8jh")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dlces")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dlces")
+button_group = SubResource("ButtonGroup_6nifr")
+text = "esc 2"
+script = ExtResource("3_n00if")
+
 [node name="salir" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -97,3 +109,4 @@ text = "salir"
 
 [connection signal="pressed" from="VBoxContainer/jugar2" to="VBoxContainer/jugar2" method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/instrucciones" to="VBoxContainer/instrucciones" method="_on_instruccion_pressed"]
+[connection signal="pressed" from="VBoxContainer/escena 2" to="VBoxContainer/jugar2" method="_on_nivel2_pressed"]

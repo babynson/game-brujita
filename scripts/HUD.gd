@@ -34,33 +34,33 @@ func _ready() -> void:
 		_on_estrella_changed(player.estrella)
 		_on_botella_changed(player.botella)
 		
-		player.level_complete.connect(_on_player_level_complete)
-		
+		player.level_complete.connect(_on_player_level1_complete)
+		#player.level2_complete.connect(_on_player_level2_complete)
 
 func _on_item_collected(tipo: String, count: int) -> void:
 	match tipo:
 		"corazon":
-			corazon_label.text = "Corazones: %d" % count
+			corazon_label.text = "Corazones:3/  %d" % count
 		"estrella":
-			estrella_label.text = "Estrellas: %d" % count
+			estrella_label.text = "Estrellas:4/ %d" % count
 		"botella":
-			botella_label.text = "Botellas: %d" % count
+			botella_label.text = "Botellas:2/ %d" % count
 
 func _update_counters(player: Node) -> void:
 	if player.has_method("_ready") or true:
-		corazon_label.text  = "Corazones: %d" % (player.corazon if "corazon" in player else 0)
-		estrella_label.text = "Estrellas: %d" % (player.estrella if "estrella" in player else 0)
-		botella_label.text  = "Botellas: %d" % (player.botella if "botella" in player else 0)
+		corazon_label.text  = "Corazones:3/ %d" % (player.corazon if "corazon" in player else 0)
+		estrella_label.text = "Estrellas:4/ %d" % (player.estrella if "estrella" in player else 0)
+		botella_label.text  = "Botellas:2/  %d" % (player.botella if "botella" in player else 0)
 					
 
 func _on_corazon_changed(new_corazon: int) -> void:
-	corazon_label.text = "corazon: %d" % new_corazon
+	corazon_label.text = "Corazones:3/  %d" % new_corazon
 
 func _on_estrella_changed(new_estrella: int) -> void:
-	estrella_label.text = "estrella: %d" % new_estrella
+	estrella_label.text = "Estrellas:4/ %d" % new_estrella
 	
 func _on_botella_changed(new_botella: int) -> void:
-	botella_label.text = "botella: %d" % new_botella	
+	botella_label.text = "Botellas:2/  %d" % new_botella	
 
 func _on_score_changed(new_score: int) -> void:
 	score_label.text = "Puntos: %d" % new_score
@@ -96,5 +96,8 @@ func cambiar_perdiste() -> void:
 func _on_good_collected(count: int, total: int):
 	$Label.text = "Objetos: %d / %d" % [count, total]
 
-func _on_player_level_complete():
+func _on_player_level1_complete():
 	get_tree().change_scene_to_file("res://nivel2.tscn")
+	
+#func _on_player_level2_complete():
+		#get_tree().change_scene_to_file("res://win_scene.tscn")

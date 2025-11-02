@@ -1,14 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmjs2l4wt4c26"]
+[gd_scene load_steps=3 format=3 uid="uid://cmjs2l4wt4c26"]
 
 [ext_resource type="PackedScene" uid="uid://b51ejwfyvquku" path="res://FallingObject.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://d4k664ml0j5fl" path="res://assets/calabera.png" id="2_4qooh"]
 
 [node name="BadObject" instance=ExtResource("1")]
 is_good = false
 
 [node name="Sprite2D" parent="." index="0"]
-modulate = Color(0.14902, 0.807843, 0.160784, 1)
-position = Vector2(2.40909, 2)
-scale = Vector2(1.1085, 1.2)
+position = Vector2(0.402546, 3.08963)
+scale = Vector2(1.02489, 1.10949)
+texture = ExtResource("2_4qooh")
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2(1, 3)

@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 @export var required_goods := 30        # necesarios para pasar de nivel
-@export var speed: float = 280.0
+@export var speed: float = 480.0
 
 @export var genial: String = "¡Bravo! +1"   # mensaje para buenos
-@export var ouch: String = "¡Ouch! -1"       # mensaje para malos
+@export var ouch: String = "¡buuuu! -1"       # mensaje para malos
 
 @onready var message_label: Label = $Message
 @onready var message_label2: Label = $Message2
@@ -22,19 +22,11 @@ var score: int = 0
 var lives: int = 5
 var good_collected: int = 0
 
-var corazon: int=0
-var estrella: int=0
-var botella: int=0
-
 var ojo: int=0
 var caramelo: int=0
 var botella2: int=0
 
 signal item_collected(tipo: String, count: int)  # agrego para recolectar "corazon" | "estrella" | "botella"
-
-signal corazon_changed(new_corazon: int)
-signal estrella_changed(new_estrella: int)
-signal botella_changed(new_botella: int)
 
 signal ojo_changed(new_ojo: int)
 signal caramelo_changed(new_caramelo: int)
@@ -45,7 +37,6 @@ signal score_changed(new_score: int)
 signal lives_changed(new_lives: int)
 signal game_over
 signal level_complete
-signal level2_complete
 
 func _ready() -> void:
 	add_to_group("player")
@@ -122,24 +113,8 @@ func _play(stream: AudioStream) -> void:
 	audio_player.play()
 
 #chequear nivel completo 
-#func _check_level_complete() -> void:
-	#if corazon >= 3 and botella >= 2 and estrella >= 4:
-		#print("🎉 Nivel completo, pasamos al siguiente!")
-		#level_complete.emit()   # usa tu señal existente
-		#
-	#elif ojo >= 3 and botella2 >= 2 and caramelo >= 4:
-		#print("🎉 2 Nivel2 completo, pasamos al siguiente!")
-		#level2_complete.emit()   # usa tu señal existente 	
-
-var nivel_actual := 1
-
 func _check_level_complete() -> void:
-	if nivel_actual == 1 and corazon >= 3 and botella >= 2 and estrella >= 4:
-		print("🎉 Nivel 1 completo!")
-		level_complete.emit()
-		nivel_actual = 2
-
-	elif nivel_actual == 2 and ojo >= 3 and botella2 >= 2 and caramelo >= 4:
-		print("🎉 Nivel 2 completo!")
-		level2_complete.emit()
-		nivel_actual = 3
+	if ojo >= 3 and botella2 >= 2 and caramelo >= 4:
+		print("🎉 Nivel completo, pasamos al siguiente!")
+		level_complete.emit()   # usa tu señal existente
+		

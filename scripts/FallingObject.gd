@@ -31,6 +31,19 @@ func _on_body_entered(body: Node) -> void:
 				body.item_collected.emit("botella", body.botella)
 				print("🍾 Sumo una botella. Total:", body.botella)
 				
+			elif "GoodObject6" in scene_file_path:
+				body.ojo += 1
+				body.item_collected.emit("ojo", body.ojo)
+				print("👁️ Sumo un ojo. Total:", body.ojo)
+			elif "GoodObject5" in scene_file_path:
+				body.caramelo += 1
+				body.item_collected.emit("caramelo", body.caramelo)
+				print("🍬 Sumo una caramelo. Total:", body.caramelo)
+			elif "GoodObject4" in scene_file_path:
+				body.botella2 += 1
+				body.item_collected.emit("botella2", body.botella2)
+				print("🍾 Sumo una botella. Total:", body.botella2)
+					
 			body.add_point()
 			body._check_level_complete()   # <--- esta línea
 		elif not is_good and body.has_method("lose_life"):

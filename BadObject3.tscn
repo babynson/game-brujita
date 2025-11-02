@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccjn0hhivjolq"]
+
+[ext_resource type="PackedScene" uid="uid://b51ejwfyvquku" path="res://FallingObject.tscn" id="1_jcohh"]
+[ext_resource type="Texture2D" uid="uid://d3muakdeml1cs" path="res://assets/calabaza-mala.png" id="2_vpvfu"]
+
+[node name="BadObject" instance=ExtResource("1_jcohh")]
+is_good = false
+
+[node name="Sprite2D" parent="." index="0"]
+position = Vector2(2.40909, 2)
+scale = Vector2(1.1085, 1.2)
+texture = ExtResource("2_vpvfu")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1, 3)

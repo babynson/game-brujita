@@ -10,6 +10,6 @@ visible = false
 modulate = Color(0.6, 1, 0.6, 1)
 
 [node name="Objetos-02" type="Sprite2D" parent="." index="2"]
-position = Vector2(0, -10)
+position = Vector2(-2, 0.999998)
 scale = Vector2(0.866667, 0.866667)
 texture = ExtResource("2_kr6p4")

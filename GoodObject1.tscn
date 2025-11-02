@@ -1,14 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bw4nvnqlsd8dm"]
 
 [ext_resource type="PackedScene" uid="uid://b51ejwfyvquku" path="res://FallingObject.tscn" id="1_ahx57"]
-[ext_resource type="Texture2D" uid="uid://4n82ob0fra0y" path="res://assets/objetos-02.png" id="2_66gr6"]
+[ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="2_c0xss"]
 
 [node name="GoodObject" instance=ExtResource("1_ahx57")]
 
 [node name="Sprite2D" parent="." index="0"]
+visible = false
 modulate = Color(0.6, 1, 0.6, 1)
 
 [node name="Objetos-02" type="Sprite2D" parent="." index="2"]
-position = Vector2(0, -10)
-scale = Vector2(0.866667, 0.866667)
-texture = ExtResource("2_66gr6")
+position = Vector2(-4.05312e-06, -4.17233e-06)
+scale = Vector2(1, 1)
+texture = ExtResource("2_c0xss")

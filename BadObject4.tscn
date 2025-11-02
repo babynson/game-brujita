@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv4ul0yi14a7j"]
+
+[ext_resource type="PackedScene" uid="uid://b51ejwfyvquku" path="res://FallingObject.tscn" id="1_h4raa"]
+[ext_resource type="Texture2D" uid="uid://btsxiu28gfcmq" path="res://assets/Corazon_VACIO.png" id="2_m5kn0"]
+
+[node name="BadObject" instance=ExtResource("1_h4raa")]
+is_good = false
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.14902, 0.807843, 0.160784, 1)
+position = Vector2(2.40909, 2)
+scale = Vector2(1.1085, 1.2)
+texture = ExtResource("2_m5kn0")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1, 3)
