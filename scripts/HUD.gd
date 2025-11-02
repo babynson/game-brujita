@@ -40,27 +40,27 @@ func _ready() -> void:
 func _on_item_collected(tipo: String, count: int) -> void:
 	match tipo:
 		"corazon":
-			corazon_label.text = "Corazones:3/  %d" % count
+			corazon_label.text = "3 / %d" % count
 		"estrella":
-			estrella_label.text = "Estrellas:4/ %d" % count
+			estrella_label.text = "4 / %d" % count
 		"botella":
-			botella_label.text = "Botellas:2/ %d" % count
+			botella_label.text = "2 / %d" % count
 
 func _update_counters(player: Node) -> void:
 	if player.has_method("_ready") or true:
-		corazon_label.text  = "Corazones:3/ %d" % (player.corazon if "corazon" in player else 0)
-		estrella_label.text = "Estrellas:4/ %d" % (player.estrella if "estrella" in player else 0)
-		botella_label.text  = "Botellas:2/  %d" % (player.botella if "botella" in player else 0)
+		corazon_label.text  = "3 / %d" % (player.corazon if "corazon" in player else 0)
+		estrella_label.text = "4 / %d" % (player.estrella if "estrella" in player else 0)
+		botella_label.text  = "2 / %d" % (player.botella if "botella" in player else 0)
 					
 
 func _on_corazon_changed(new_corazon: int) -> void:
-	corazon_label.text = "Corazones:3/  %d" % new_corazon
+	corazon_label.text = "3 / %d" % new_corazon
 
 func _on_estrella_changed(new_estrella: int) -> void:
-	estrella_label.text = "Estrellas:4/ %d" % new_estrella
+	estrella_label.text = "4 / %d" % new_estrella
 	
 func _on_botella_changed(new_botella: int) -> void:
-	botella_label.text = "Botellas:2/  %d" % new_botella	
+	botella_label.text = "2 / %d" % new_botella	
 
 func _on_score_changed(new_score: int) -> void:
 	score_label.text = "Puntos: %d" % new_score

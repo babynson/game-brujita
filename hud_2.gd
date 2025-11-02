@@ -40,27 +40,27 @@ func _ready() -> void:
 func _on_item_collected(tipo: String, count: int) -> void:
 	match tipo:
 		"ojo":
-			ojo_label.text = "Ojo:3/ %d" % count
+			ojo_label.text = "3/ %d" % count
 		"caramelo":
-			caramelo_label.text = "Caramelo:4/ %d" % count
+			caramelo_label.text = "4/ %d" % count
 		"botella2":
-			botella2_label.text = "Calabaza:2/ %d" % count
+			botella2_label.text = "2/ %d" % count
 
 func _update_counters(player: Node) -> void:
 	if player.has_method("_ready") or true:
-		ojo_label.text  = "Ojo:3/ %d" % (player.ojo if "ojo" in player else 0)
-		caramelo_label.text = "Caramelo:4/ %d" % (player.caramelo if "caramelo" in player else 0)
-		botella2_label.text  = "Calabaza:2/ %d" % (player.botella2 if "botella2" in player else 0)
+		ojo_label.text  = "3/ %d" % (player.ojo if "ojo" in player else 0)
+		caramelo_label.text = "4/ %d" % (player.caramelo if "caramelo" in player else 0)
+		botella2_label.text  = "2/ %d" % (player.botella2 if "botella2" in player else 0)
 					
 
 func _on_ojo_changed(new_ojo: int) -> void:
-	ojo_label.text = "Ojo:3/ %d" % new_ojo
+	ojo_label.text = "3/ %d" % new_ojo
 
 func _on_caramelo_changed(new_caramelo: int) -> void:
-	caramelo_label.text = "Caramelo:4/ %d" % new_caramelo
+	caramelo_label.text = "4/ %d" % new_caramelo
 	
 func _on_botella2_changed(new_botella2: int) -> void:
-	botella2_label.text = "Calabaza:2/ %d" % new_botella2	
+	botella2_label.text = "2/ %d" % new_botella2	
 
 func _on_score_changed(new_score: int) -> void:
 	score_label.text = "Puntos: %d" % new_score

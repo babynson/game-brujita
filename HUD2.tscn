@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ync8evin8kvd"]
+[gd_scene load_steps=7 format=3 uid="uid://ync8evin8kvd"]
 
 [ext_resource type="Script" path="res://hud_2.gd" id="1_a11q8"]
 [ext_resource type="Texture2D" uid="uid://c6qv7ha5kk20d" path="res://assets/ojo.png" id="2_6asr3"]
+[ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="2_dreg5"]
 [ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="3_csr80"]
 [ext_resource type="Texture2D" uid="uid://c8vjhjhakisr3" path="res://assets/calabaza.png" id="4_bxhg6"]
 
@@ -9,28 +10,29 @@
 
 [node name="HUD2" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
 script = ExtResource("1_a11q8")
 
 [node name="Objetos" type="VBoxContainer" parent="."]
 clip_contents = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.074
-anchor_right = 0.074
-offset_left = 948.752
-offset_right = 1066.75
-offset_bottom = 155.0
+anchor_left = 0.913
+anchor_right = 0.913
+offset_left = -42.776
+offset_top = -1.0
+offset_right = 100.224
+offset_bottom = 237.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 
 [node name="Label" type="Label" parent="Objetos"]
 layout_mode = 2
-text = "objetivos "
+theme_override_fonts/font = ExtResource("2_dreg5")
+theme_override_font_sizes/font_size = 30
+text = "Objetivos "
 
 [node name="lista" type="HBoxContainer" parent="Objetos"]
 layout_mode = 2
@@ -42,6 +44,8 @@ stretch_mode = 3
 
 [node name="ojo" type="Label" parent="Objetos/lista"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dreg5")
+theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="lista2" type="HBoxContainer" parent="Objetos"]
@@ -54,6 +58,8 @@ stretch_mode = 3
 
 [node name="caramelo" type="Label" parent="Objetos/lista2"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dreg5")
+theme_override_font_sizes/font_size = 30
 text = "0"
 
 [node name="lista3" type="HBoxContainer" parent="Objetos"]
@@ -67,12 +73,14 @@ stretch_mode = 3
 
 [node name="botella2" type="Label" parent="Objetos/lista3"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dreg5")
+theme_override_font_sizes/font_size = 30
 text = "0
 "
 
 [node name="Margin" type="MarginContainer" parent="."]
 layout_mode = 1
-offset_right = 1146.0
+offset_right = 1007.0
 offset_bottom = 85.0
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 8
@@ -87,10 +95,12 @@ theme_override_constants/separation = 50
 [node name="Score" type="Label" parent="Margin/Row"]
 clip_contents = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "Puntos: 0"
 
 [node name="Lives" type="Label" parent="Margin/Row"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "vidas: 4"
