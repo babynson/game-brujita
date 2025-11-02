@@ -1,11 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://mpbg1mixb2ks"]
+[gd_scene load_steps=15 format=3 uid="uid://mpbg1mixb2ks"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_x1581"]
 [ext_resource type="Texture2D" uid="uid://3u273sjxqa77" path="res://assets/FONDO-instrucciones-nivel2.jpg" id="2_k2bre"]
 [ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="3_da0px"]
+[ext_resource type="Texture2D" uid="uid://dth4aos3cabe6" path="res://assets/alvaro.png" id="3_dclby"]
+[ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="4_0wkjx"]
 [ext_resource type="Script" path="res://jugar.gd" id="4_gdtwp"]
+[ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="5_0ennr"]
 [ext_resource type="Texture2D" uid="uid://c6qv7ha5kk20d" path="res://assets/ojo.png" id="5_uh5yx"]
+[ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="6_k8bsi"]
 [ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="6_l1arr"]
+[ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="7_0oeq4"]
 [ext_resource type="Texture2D" uid="uid://c8vjhjhakisr3" path="res://assets/calabaza.png" id="7_ie5f6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
@@ -56,6 +61,15 @@ position = Vector2(596.625, 321.25)
 scale = Vector2(0.623945, 0.605093)
 texture = ExtResource("2_k2bre")
 
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+offset_left = 361.0
+offset_top = 247.0
+offset_right = 793.0
+offset_bottom = 296.0
+text = "Alvaro se rompio la pata! hay que hacerle una cura para 
+que vuelva a andar por los techos "
+
 [node name="nivel 2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 404.0
@@ -66,12 +80,73 @@ theme_override_font_sizes/font_size = 60
 text = "Nivel 2
 "
 
+[node name="TextureRect" type="TextureRect" parent="nivel 2"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 86.0
+offset_right = 760.0
+offset_bottom = 526.0
+texture = ExtResource("3_dclby")
+
+[node name="corazon" type="TextureRect" parent="nivel 2/TextureRect"]
+offset_left = 640.0
+offset_top = 203.0
+offset_right = 688.0
+offset_bottom = 251.0
+texture = ExtResource("4_0wkjx")
+
+[node name="Label3" type="Label" parent="nivel 2/TextureRect/corazon"]
+layout_mode = 0
+offset_left = -17.0
+offset_top = 52.0
+offset_right = 79.0
+offset_bottom = 75.0
+text = "3 corazones "
+
+[node name="botella" type="TextureRect" parent="nivel 2/TextureRect/corazon"]
+offset_left = 260.0
+offset_top = -14.0
+offset_right = 308.0
+offset_bottom = 34.0
+texture = ExtResource("5_0ennr")
+
+[node name="botella" type="Label" parent="nivel 2/TextureRect/corazon/botella"]
+offset_left = -35.0
+offset_top = 55.0
+offset_right = 100.0
+offset_bottom = 104.0
+text = "3 pociones de ver
+ "
+
+[node name="estrella" type="TextureRect" parent="nivel 2/TextureRect/corazon"]
+offset_left = 131.0
+offset_top = -4.0
+offset_right = 179.0
+offset_bottom = 44.0
+texture = ExtResource("6_k8bsi")
+
+[node name="estrella" type="Label" parent="nivel 2/TextureRect/corazon/estrella"]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 58.0
+offset_right = 60.0
+offset_bottom = 81.0
+text = "4 estrellas"
+
+[node name="TextureRect2" type="TextureRect" parent="nivel 2"]
+layout_mode = 0
+offset_left = -403.0
+offset_top = 84.0
+offset_right = -39.0
+offset_bottom = 524.0
+texture = ExtResource("7_0oeq4")
+
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 371.0
-offset_top = 254.0
-offset_right = 668.0
-offset_bottom = 313.0
+offset_left = 384.0
+offset_top = 309.0
+offset_right = 709.0
+offset_bottom = 368.0
 theme_override_font_sizes/font_size = 30
 text = "Crear una Pocima con:"
 horizontal_alignment = 1
@@ -86,20 +161,20 @@ centered = false
 
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 395.0
-offset_top = 412.0
-offset_right = 682.0
-offset_bottom = 452.0
+offset_left = 402.0
+offset_top = 468.0
+offset_right = 696.0
+offset_bottom = 509.0
 theme = SubResource("Theme_7y546")
 text = "Jugar "
 script = ExtResource("4_gdtwp")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 385.0
-offset_top = 319.0
-offset_right = 466.0
-offset_bottom = 388.0
+offset_left = 401.0
+offset_top = 377.0
+offset_right = 482.0
+offset_bottom = 446.0
 
 [node name="Label" type="Label" parent="HBoxContainer"]
 layout_mode = 2
@@ -113,10 +188,10 @@ stretch_mode = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 489.0
-offset_top = 319.0
-offset_right = 570.0
-offset_bottom = 388.0
+offset_left = 505.0
+offset_top = 377.0
+offset_right = 586.0
+offset_bottom = 446.0
 
 [node name="Label" type="Label" parent="HBoxContainer2"]
 layout_mode = 2
@@ -130,10 +205,10 @@ stretch_mode = 3
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 593.0
-offset_top = 319.0
-offset_right = 674.0
-offset_bottom = 388.0
+offset_left = 609.0
+offset_top = 377.0
+offset_right = 690.0
+offset_bottom = 446.0
 
 [node name="Label" type="Label" parent="HBoxContainer3"]
 layout_mode = 2
