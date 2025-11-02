@@ -5,19 +5,18 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p542u"]
 radius = 5.5
-height = 48.1533
+height = 58.0768
 
 [node name="BadObject2" instance=ExtResource("1_0p4km")]
 is_good = false
 
 [node name="Sprite2D" parent="." index="0"]
-modulate = Color(0.14902, 0.807843, 0.160784, 1)
-position = Vector2(-1, 4.76837e-07)
-scale = Vector2(1.281, 1.387)
+position = Vector2(2.5101, 3.44425)
+scale = Vector2(1.50038, 1.62453)
 texture = ExtResource("2_fa6p6")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(-2, -1)
+position = Vector2(3, 3)
 rotation = -0.867429
 scale = Vector2(1.005, 1.005)
 shape = SubResource("CapsuleShape2D_p542u")

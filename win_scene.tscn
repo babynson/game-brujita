@@ -1,16 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://tkhclk2o55sl"]
+[gd_scene load_steps=13 format=3 uid="uid://tkhclk2o55sl"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_j4ewn"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_ovttw"]
 [ext_resource type="Script" path="res://jugar.gd" id="3_ffgmq"]
 [ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="3_vsq0t"]
 [ext_resource type="AudioStream" uid="uid://c80m654b1h8cw" path="res://assets/musi/sonido-pasodenivel.mp3" id="5_jukyj"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_cgexd"]
-font_size = 26
-outline_color = Color(0.12549, 1, 1, 1)
-shadow_size = 3
-shadow_color = Color(0, 0.886275, 0.231373, 0)
+[ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="6_enjtv"]
+[ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="7_ayb14"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -37,6 +33,22 @@ Button/styles/hover_pressed = SubResource("StyleBoxFlat_hu7qx")
 Button/styles/normal = SubResource("StyleBoxFlat_hu7qx")
 Button/styles/pressed = null
 
+[sub_resource type="Theme" id="Theme_hc033"]
+default_font_size = 30
+Button/fonts/font = ExtResource("3_vsq0t")
+Button/styles/focus = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/hover = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/normal = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/pressed = null
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_br0cn"]
+bg_color = Color(0.964706, 0, 0.352941, 0.0901961)
+border_width_bottom = 2
+shadow_size = 3
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v2m84"]
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -59,24 +71,18 @@ texture = ExtResource("1_j4ewn")
 expand_mode = 1
 
 [node name="FondoInstrucciones" type="Sprite2D" parent="."]
-position = Vector2(613, 339)
+position = Vector2(621, 312)
+scale = Vector2(1.02928, 1.08854)
 texture = ExtResource("2_ovttw")
 
-[node name="Label" type="Label" parent="."]
-texture_filter = 2
-clip_contents = true
-layout_direction = 1
+[node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 44.0
-offset_top = 184.0
-offset_right = 938.0
-offset_bottom = 314.0
-theme_override_font_sizes/font_size = 60
-text = "Ganaste 
-
-Pasaste al otro nivel "
-label_settings = SubResource("LabelSettings_cgexd")
-horizontal_alignment = 1
+offset_left = 295.0
+offset_top = 112.0
+offset_right = 722.0
+offset_bottom = 222.0
+theme_override_font_sizes/font_size = 70
+text = "GANASTE!"
 
 [node name="Fondo-chico-02" type="Sprite2D" parent="."]
 visible = false
@@ -86,14 +92,66 @@ scale = Vector2(0.484328, 0.484328)
 texture = ExtResource("1_j4ewn")
 centered = false
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 502.0
+offset_top = 234.0
+offset_right = 898.0
+offset_bottom = 375.0
+theme_override_font_sizes/font_size = 40
+text = "Queres jugar 
+de vuelta?"
+horizontal_alignment = 1
+
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 593.0
-offset_top = 429.0
-offset_right = 645.0
-offset_bottom = 460.0
+offset_left = 514.0
+offset_top = 366.0
+offset_right = 923.0
+offset_bottom = 406.0
 theme = SubResource("Theme_7y546")
-text = "pasar al nievel 2 "
+text = "Jugar"
 script = ExtResource("3_ffgmq")
 
+[node name="jugar2" type="Button" parent="."]
+offset_left = 514.0
+offset_top = 420.0
+offset_right = 923.0
+offset_bottom = 460.0
+theme = SubResource("Theme_hc033")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_br0cn")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_v2m84")
+text = "Salir "
+script = ExtResource("3_ffgmq")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 871.0
+offset_top = 187.0
+offset_right = 942.0
+offset_bottom = 256.0
+texture = ExtResource("6_enjtv")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect3"]
+offset_left = -650.0
+offset_top = 87.0
+offset_right = -579.0
+offset_bottom = 156.0
+texture = ExtResource("6_enjtv")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect3/TextureRect3"]
+offset_left = 744.0
+offset_top = 142.0
+offset_right = 815.0
+offset_bottom = 211.0
+texture = ExtResource("6_enjtv")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 209.0
+offset_right = 508.0
+offset_bottom = 649.0
+texture = ExtResource("7_ayb14")
+
 [connection signal="pressed" from="jugar" to="jugar" method="_on_nivel2_pressed"]
+[connection signal="pressed" from="jugar2" to="jugar2" method="_on_salir_pressed"]

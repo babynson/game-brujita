@@ -1,9 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctopn1qe21viu"]
+[gd_scene load_steps=16 format=3 uid="uid://ctopn1qe21viu"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_5o7br"]
 [ext_resource type="FontFile" uid="uid://bggp2qsb742jt" path="res://assets/fonts/HPSimplified.ttf" id="1_ca8jh"]
 [ext_resource type="FontFile" uid="uid://bjrxvxyarbkpp" path="res://assets/fonts/BRLNSDB.TTF" id="2_2j82s"]
+[ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="2_8mewt"]
 [ext_resource type="Script" path="res://jugar.gd" id="3_n00if"]
+[ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="6_rw4kb"]
+[ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="7_anuwu"]
+[ext_resource type="Texture2D" uid="uid://c8vjhjhakisr3" path="res://assets/calabaza.png" id="8_o0tne"]
+[ext_resource type="Texture2D" uid="uid://d4k664ml0j5fl" path="res://assets/calabera.png" id="9_pwek8"]
+[ext_resource type="Texture2D" uid="uid://c6qv7ha5kk20d" path="res://assets/ojo.png" id="10_5qpj2"]
+[ext_resource type="Texture2D" uid="uid://d3muakdeml1cs" path="res://assets/calabaza-mala.png" id="11_f318a"]
+[ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="12_xyelp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlces"]
 bg_color = Color(0.57, 0.14, 1, 1)
@@ -36,6 +44,13 @@ position = Vector2(586.095, 333)
 scale = Vector2(0.589868, 0.48209)
 texture = ExtResource("1_5o7br")
 
+[node name="gatito" type="TextureRect" parent="PresentacionJuego"]
+offset_left = -756.262
+offset_top = 4.14863
+offset_right = -246.262
+offset_bottom = 652.149
+texture = ExtResource("2_8mewt")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -44,9 +59,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -154.0
-offset_top = -213.0
-offset_right = 218.0
-offset_bottom = 235.0
+offset_top = -318.0
+offset_right = 196.0
+offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -106,7 +121,67 @@ theme_override_fonts/font = ExtResource("1_ca8jh")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_32mmd")
 text = "salir"
+script = ExtResource("3_n00if")
+
+[node name="corazon" type="TextureRect" parent="."]
+offset_left = 860.0
+offset_top = 86.0
+offset_right = 908.0
+offset_bottom = 134.0
+texture = ExtResource("6_rw4kb")
+
+[node name="estrella" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 236.0
+offset_top = 52.0
+offset_right = 284.0
+offset_bottom = 100.0
+texture = ExtResource("7_anuwu")
+
+[node name="jo" type="TextureRect" parent="estrella"]
+offset_left = -148.0
+offset_top = 189.0
+offset_right = -85.0
+offset_bottom = 252.0
+texture = ExtResource("8_o0tne")
+
+[node name="jo2" type="TextureRect" parent="estrella/jo"]
+offset_left = -24.0
+offset_top = 470.0
+offset_right = 39.0
+offset_bottom = 533.0
+texture = ExtResource("9_pwek8")
+
+[node name="jo" type="TextureRect" parent="estrella/jo"]
+offset_left = 162.0
+offset_top = -7.0
+offset_right = 210.0
+offset_bottom = 41.0
+texture = ExtResource("9_pwek8")
+
+[node name="jo2" type="TextureRect" parent="estrella"]
+offset_left = 584.0
+offset_top = 460.0
+offset_right = 632.0
+offset_bottom = 508.0
+texture = ExtResource("10_5qpj2")
+
+[node name="corazon" type="TextureRect" parent="estrella"]
+layout_mode = 2
+offset_left = 318.0
+offset_top = 466.0
+offset_right = 369.0
+offset_bottom = 514.0
+texture = ExtResource("11_f318a")
+
+[node name="estrella" type="TextureRect" parent="estrella"]
+offset_left = 665.0
+offset_top = 228.0
+offset_right = 730.0
+offset_bottom = 293.0
+texture = ExtResource("12_xyelp")
 
 [connection signal="pressed" from="VBoxContainer/jugar2" to="VBoxContainer/jugar2" method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/instrucciones" to="VBoxContainer/instrucciones" method="_on_instruccion_pressed"]
 [connection signal="pressed" from="VBoxContainer/escena 2" to="VBoxContainer/jugar2" method="_on_nivel2_pressed"]
+[connection signal="pressed" from="VBoxContainer/salir" to="VBoxContainer/escena 2" method="_on_salir_pressed"]

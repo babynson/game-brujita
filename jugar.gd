@@ -11,3 +11,7 @@ func _on_instruccion_pressed():
 # boton instrucciones
 func _on_nivel2_pressed():
 	get_tree().change_scene_to_file("res://Main_nivel2.tscn")
+
+#Boton salir
+func _on_salir_pressed() -> void:
+	get_tree().quit()
