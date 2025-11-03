@@ -97,7 +97,7 @@ func _on_good_collected(count: int, total: int):
 	$Label.text = "Objetos: %d / %d" % [count, total]
 
 func _on_player_level1_complete():
-	get_tree().change_scene_to_file("res://nivel2.tscn")
+	get_tree().change_scene_to_file("res://win-nivel1.tscn")
 	
 #func _on_player_level2_complete():
 		#get_tree().change_scene_to_file("res://win_scene.tscn")

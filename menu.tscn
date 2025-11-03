@@ -115,6 +115,7 @@ text = "Instrucciones
 script = ExtResource("3_n00if")
 
 [node name="escena 2" type="Button" parent="VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ca8jh")
 theme_override_font_sizes/font_size = 40
@@ -123,7 +124,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_dlces")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dlces")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dlces")
 button_group = SubResource("ButtonGroup_6nifr")
-text = "esc 2"
+text = "extras"
 script = ExtResource("3_n00if")
 
 [node name="salir" type="Button" parent="VBoxContainer"]
@@ -137,6 +138,7 @@ text = "salir"
 script = ExtResource("3_n00if")
 
 [node name="corazon" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 860.0
 offset_top = 86.0
 offset_right = 908.0
@@ -161,6 +163,7 @@ offset_bottom = 100.0
 texture = ExtResource("7_anuwu")
 
 [node name="jo" type="TextureRect" parent="estrella"]
+layout_mode = 0
 offset_left = -148.0
 offset_top = 189.0
 offset_right = -85.0
@@ -168,6 +171,7 @@ offset_bottom = 252.0
 texture = ExtResource("8_o0tne")
 
 [node name="jo2" type="TextureRect" parent="estrella/jo"]
+layout_mode = 0
 offset_left = -24.0
 offset_top = 470.0
 offset_right = 39.0
@@ -175,6 +179,7 @@ offset_bottom = 533.0
 texture = ExtResource("9_pwek8")
 
 [node name="jo" type="TextureRect" parent="estrella/jo"]
+layout_mode = 0
 offset_left = 162.0
 offset_top = -7.0
 offset_right = 210.0
@@ -182,6 +187,7 @@ offset_bottom = 41.0
 texture = ExtResource("9_pwek8")
 
 [node name="jo2" type="TextureRect" parent="estrella"]
+layout_mode = 0
 offset_left = 584.0
 offset_top = 460.0
 offset_right = 632.0
@@ -197,6 +203,7 @@ offset_bottom = 514.0
 texture = ExtResource("11_f318a")
 
 [node name="estrella" type="TextureRect" parent="estrella"]
+layout_mode = 0
 offset_left = 665.0
 offset_top = 228.0
 offset_right = 730.0

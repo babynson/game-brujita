@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_wi8ga"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_wcfpy"]
+[ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="3_ns8xp"]
 [ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="3_vsody"]
 [ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="4_d7vr2"]
 [ext_resource type="Texture2D" uid="uid://i5lo5o4gic40" path="res://assets/charly.png" id="4_jroqk"]
@@ -9,12 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="6_d45je"]
 [ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="7_0nf5f"]
 [ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="8_xlu15"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_cgexd"]
-font_size = 26
-outline_color = Color(0.12549, 1, 1, 1)
-shadow_size = 3
-shadow_color = Color(0, 0.886275, 0.231373, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -60,15 +55,26 @@ texture = ExtResource("1_wi8ga")
 expand_mode = 1
 
 [node name="FondoInstrucciones" type="Sprite2D" parent="."]
-position = Vector2(613, 339)
+position = Vector2(594.565, 332)
+scale = Vector2(1.1849, 1.1849)
 texture = ExtResource("2_wcfpy")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 88.0
+offset_right = 512.0
+offset_bottom = 163.0
+theme_override_fonts/font = ExtResource("3_ns8xp")
+theme_override_font_sizes/font_size = 60
+text = "Nivel 1 "
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 108.0
-offset_top = 149.0
-offset_right = 472.0
-offset_bottom = 589.0
+offset_left = 73.0
+offset_top = 192.0
+offset_right = 437.0
+offset_bottom = 632.0
 texture = ExtResource("3_vsody")
 
 [node name="TextureRect3" type="TextureRect" parent="."]
@@ -81,27 +87,15 @@ texture = ExtResource("4_jroqk")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 472.0
-offset_top = 230.0
-offset_right = 845.0
-offset_bottom = 341.0
-text = "En Este nivel necesito armar una pocima 
-para charly que esta muy triste y esta un poco 
-perdido ME AYUDAS? "
-
-[node name="Label" type="Label" parent="."]
-texture_filter = 2
-clip_contents = true
-layout_direction = 1
-layout_mode = 0
-offset_left = 339.0
-offset_top = 137.0
-offset_right = 610.0
-offset_bottom = 182.0
-theme_override_font_sizes/font_size = 80
-text = "Nivel 1"
-label_settings = SubResource("LabelSettings_cgexd")
-horizontal_alignment = 1
+offset_left = 435.0
+offset_top = 220.0
+offset_right = 938.0
+offset_bottom = 331.0
+theme_override_fonts/font = ExtResource("4_d7vr2")
+theme_override_font_sizes/font_size = 25
+text = "Charly es mi amigo no ve muy bien y esta muy triste
+necesito armar una pocima con una formula de 
+mi abuela Nala ME AYUDAS a recolectar ? "
 
 [node name="Fondo-chico-02" type="Sprite2D" parent="."]
 visible = false
@@ -113,20 +107,20 @@ centered = false
 
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 512.0
-offset_top = 441.0
-offset_right = 838.0
-offset_bottom = 481.0
+offset_left = 463.0
+offset_top = 457.0
+offset_right = 755.0
+offset_bottom = 497.0
 theme = SubResource("Theme_7y546")
 text = "Jugar "
 script = ExtResource("5_pt7lk")
 
 [node name="corazon" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 508.0
-offset_top = 331.0
-offset_right = 556.0
-offset_bottom = 379.0
+offset_left = 472.0
+offset_top = 343.0
+offset_right = 520.0
+offset_bottom = 391.0
 texture = ExtResource("6_d45je")
 
 [node name="Label3" type="Label" parent="corazon"]
@@ -139,19 +133,19 @@ text = "3 corazones "
 
 [node name="botella" type="TextureRect" parent="corazon"]
 layout_mode = 0
-offset_left = 272.0
-offset_right = 320.0
+offset_left = 245.0
+offset_right = 293.0
 offset_bottom = 48.0
 texture = ExtResource("7_0nf5f")
 
 [node name="botella" type="Label" parent="corazon/botella"]
 layout_mode = 0
-offset_left = -35.0
 offset_top = 55.0
-offset_right = 100.0
+offset_right = 55.0
 offset_bottom = 104.0
-text = "3 pociones de ver
+text = "2 OJitos
  "
+horizontal_alignment = 1
 
 [node name="estrella" type="TextureRect" parent="corazon"]
 layout_mode = 0

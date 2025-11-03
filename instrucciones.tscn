@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://br476iw7t14d8"]
+[gd_scene load_steps=17 format=3 uid="uid://br476iw7t14d8"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_pc842"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_2xsrb"]
 [ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="3_cfvxx"]
 [ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="3_cxsb0"]
+[ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="3_ihhqb"]
 [ext_resource type="Script" path="res://jugar.gd" id="4_f72rf"]
 [ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="6_uw4wl"]
 [ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="7_ugw30"]
@@ -11,12 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://c6qv7ha5kk20d" path="res://assets/ojo.png" id="9_o7sg3"]
 [ext_resource type="Texture2D" uid="uid://c8vjhjhakisr3" path="res://assets/calabaza.png" id="10_14pg5"]
 [ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="11_taon2"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_cgexd"]
-font_size = 26
-outline_color = Color(0.12549, 1, 1, 1)
-shadow_size = 3
-shadow_color = Color(0, 0.886275, 0.231373, 0)
+[ext_resource type="Texture2D" uid="uid://r6ulbajo3fqp" path="res://assets/JUGADOR-03-2.png" id="13_th6vg"]
+[ext_resource type="Texture2D" uid="uid://d0sfx1exng53q" path="res://assets/paletas2.png" id="14_lgs06"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -62,41 +59,38 @@ texture = ExtResource("1_pc842")
 expand_mode = 1
 
 [node name="FondoInstrucciones" type="Sprite2D" parent="."]
-position = Vector2(622.5, 318)
+position = Vector2(593, 329)
 scale = Vector2(1.14275, 1.26563)
 texture = ExtResource("2_2xsrb")
 
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 258.0
+offset_top = 102.0
+offset_right = 637.0
+offset_bottom = 177.0
+theme_override_fonts/font = ExtResource("3_ihhqb")
+theme_override_font_sizes/font_size = 60
+text = "Instrucciones "
+
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -4.0
-offset_top = 219.0
-offset_right = 360.0
-offset_bottom = 659.0
+offset_left = 36.0
+offset_top = 178.0
+offset_right = 400.0
+offset_bottom = 618.0
 texture = ExtResource("3_cfvxx")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 244.0
-offset_top = 104.0
-offset_right = 641.0
-offset_bottom = 215.0
-text = "Hola Soy ALQUI necesito terminar dos pocimas
- para ayudar a dos gatitos enfermos 
-me ayudas a cazar todos los ingredientes? "
-
-[node name="Label" type="Label" parent="."]
-texture_filter = 2
-clip_contents = true
-layout_direction = 1
-layout_mode = 0
-offset_left = 258.0
-offset_top = 51.0
-offset_right = 603.0
-offset_bottom = 96.0
-theme_override_font_sizes/font_size = 66
-text = "Instrucciones del juego"
-label_settings = SubResource("LabelSettings_cgexd")
-horizontal_alignment = 1
+offset_left = 354.0
+offset_top = 209.0
+offset_right = 993.0
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("3_cxsb0")
+theme_override_font_sizes/font_size = 25
+text = "Hola Soy ALQUI necesito terminar dos pocimas para ayudar 
+a dos gatitos me ayudas a cazar todos los ingredientes? "
 
 [node name="Fondo-chico-02" type="Sprite2D" parent="."]
 visible = false
@@ -108,134 +102,132 @@ centered = false
 
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 326.0
-offset_top = 474.0
-offset_right = 652.0
-offset_bottom = 514.0
+offset_left = 391.0
+offset_top = 473.0
+offset_right = 873.0
+offset_bottom = 513.0
 theme = SubResource("Theme_7y546")
 text = "Jugar "
 script = ExtResource("4_f72rf")
 
-[node name="Label4" type="Label" parent="."]
+[node name="CHARLY" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 376.0
+offset_top = 323.0
+offset_right = 623.0
+offset_bottom = 417.0
+alignment = 1
+
+[node name="Label4" type="Label" parent="CHARLY"]
 texture_filter = 2
 clip_contents = true
 layout_direction = 1
-offset_left = 351.0
-offset_top = 372.0
-offset_right = 598.0
-offset_bottom = 418.0
-theme_override_font_sizes/font_size = 60
-text = "nivel 2  para Alvaro "
-label_settings = SubResource("LabelSettings_cgexd")
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "NIVEL 1: CHARLY"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CHARLY"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CHARLY/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="CHARLY/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "3"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
-texture_filter = 2
-clip_contents = true
-layout_direction = 1
-offset_left = 345.0
-offset_top = 257.0
-offset_right = 581.0
-offset_bottom = 303.0
-theme_override_font_sizes/font_size = 60
-text = "nivel 1 para Charly"
-label_settings = SubResource("LabelSettings_cgexd")
-horizontal_alignment = 1
-
-[node name="corazon" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 621.0
-offset_top = 233.0
-offset_right = 669.0
-offset_bottom = 281.0
+[node name="caramelo" type="TextureRect" parent="CHARLY/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
 texture = ExtResource("6_uw4wl")
 
-[node name="Label3" type="Label" parent="corazon"]
-layout_mode = 0
-offset_left = -17.0
-offset_top = 52.0
-offset_right = 79.0
-offset_bottom = 75.0
-text = "3 corazones "
+[node name="Label3" type="Label" parent="CHARLY/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "4"
+horizontal_alignment = 1
 
-[node name="botella" type="TextureRect" parent="corazon"]
-offset_left = 254.0
-offset_top = -20.0
-offset_right = 302.0
-offset_bottom = 28.0
-texture = ExtResource("7_ugw30")
-
-[node name="botella" type="Label" parent="corazon/botella"]
-offset_left = -35.0
-offset_top = 71.0
-offset_right = 100.0
-offset_bottom = 120.0
-text = "3 pociones de ver
- "
-
-[node name="estrella" type="TextureRect" parent="corazon"]
-offset_left = 131.0
-offset_top = -4.0
-offset_right = 179.0
-offset_bottom = 44.0
+[node name="calabaza" type="TextureRect" parent="CHARLY/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
 texture = ExtResource("8_ag4bp")
 
-[node name="estrella" type="Label" parent="corazon/estrella"]
-layout_mode = 0
-offset_left = -19.0
-offset_top = 58.0
-offset_right = 60.0
-offset_bottom = 81.0
-text = "4 estrellas"
+[node name="Label2" type="Label" parent="CHARLY/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "2"
+horizontal_alignment = 1
 
-[node name="ojo" type="TextureRect" parent="corazon"]
-offset_left = 8.0
-offset_top = 125.0
-offset_right = 56.0
-offset_bottom = 173.0
-texture = ExtResource("9_o7sg3")
+[node name="ojo" type="TextureRect" parent="CHARLY/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("7_ugw30")
 
-[node name="calabaza" type="TextureRect" parent="corazon/ojo"]
-offset_left = 267.0
-offset_top = -6.0
-offset_right = 315.0
-offset_bottom = 42.0
-texture = ExtResource("10_14pg5")
+[node name="ALVARO" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 706.0
+offset_top = 315.0
+offset_right = 953.0
+offset_bottom = 409.0
+alignment = 1
 
-[node name="botella" type="Label" parent="corazon/ojo/calabaza"]
-offset_left = -34.0
-offset_top = 57.0
-offset_right = 101.0
-offset_bottom = 106.0
-text = "3 pociones de ver
- "
+[node name="Label4" type="Label" parent="ALVARO"]
+texture_filter = 2
+clip_contents = true
+layout_direction = 1
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "NIVEL 2: ALVARO"
+horizontal_alignment = 1
 
-[node name="caramelo" type="TextureRect" parent="corazon/ojo"]
-offset_left = 131.0
-offset_top = -4.0
-offset_right = 179.0
-offset_bottom = 44.0
+[node name="HBoxContainer" type="HBoxContainer" parent="ALVARO"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ALVARO/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="ALVARO/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "4"
+horizontal_alignment = 1
+
+[node name="caramelo" type="TextureRect" parent="ALVARO/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
 texture = ExtResource("11_taon2")
 
-[node name="estrella" type="Label" parent="corazon/ojo/caramelo"]
-layout_mode = 0
-offset_left = -19.0
-offset_top = 58.0
-offset_right = 60.0
-offset_bottom = 81.0
-text = "4 estrellas"
+[node name="Label3" type="Label" parent="ALVARO/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "2"
+horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="corazon/ojo"]
-layout_mode = 0
-offset_left = -17.0
-offset_top = 52.0
-offset_right = 79.0
-offset_bottom = 75.0
-text = "3 ojos de"
+[node name="calabaza" type="TextureRect" parent="ALVARO/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("10_14pg5")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="corazon"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label2" type="Label" parent="ALVARO/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "3"
+horizontal_alignment = 1
+
+[node name="ojo" type="TextureRect" parent="ALVARO/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("9_o7sg3")
+
+[node name="Corazon" type="Sprite2D" parent="."]
+position = Vector2(215, 136)
+texture = ExtResource("6_uw4wl")
+
+[node name="Jugador-03-2" type="Sprite2D" parent="."]
+position = Vector2(1001, 539)
+scale = Vector2(1.20769, 1.20769)
+texture = ExtResource("13_th6vg")
+
+[node name="Paletas2" type="Sprite2D" parent="."]
+position = Vector2(1252, 580)
+texture = ExtResource("14_lgs06")
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_play_pressed"]

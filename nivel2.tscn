@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://mpbg1mixb2ks"]
+[gd_scene load_steps=16 format=3 uid="uid://mpbg1mixb2ks"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_x1581"]
 [ext_resource type="Texture2D" uid="uid://3u273sjxqa77" path="res://assets/FONDO-instrucciones-nivel2.jpg" id="2_k2bre"]
 [ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="3_da0px"]
 [ext_resource type="Texture2D" uid="uid://dth4aos3cabe6" path="res://assets/alvaro.png" id="3_dclby"]
 [ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="4_0wkjx"]
+[ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="4_1ugub"]
 [ext_resource type="Script" path="res://jugar.gd" id="4_gdtwp"]
 [ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="5_0ennr"]
 [ext_resource type="Texture2D" uid="uid://c6qv7ha5kk20d" path="res://assets/ojo.png" id="5_uh5yx"]
@@ -63,32 +64,36 @@ texture = ExtResource("2_k2bre")
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 2
-offset_left = 361.0
-offset_top = 247.0
-offset_right = 793.0
-offset_bottom = 296.0
+offset_left = 351.0
+offset_top = 240.0
+offset_right = 943.0
+offset_bottom = 301.0
+theme_override_fonts/font = ExtResource("3_da0px")
+theme_override_font_sizes/font_size = 25
 text = "Alvaro se rompio la pata! hay que hacerle una cura para 
-que vuelva a andar por los techos "
+que vuelva a pasear por los techos "
 
 [node name="nivel 2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 404.0
-offset_top = 136.0
-offset_right = 601.0
-offset_bottom = 219.0
+offset_left = 412.0
+offset_top = 145.0
+offset_right = 612.0
+offset_bottom = 228.0
+theme_override_fonts/font = ExtResource("4_1ugub")
 theme_override_font_sizes/font_size = 60
 text = "Nivel 2
 "
 
 [node name="TextureRect" type="TextureRect" parent="nivel 2"]
 layout_mode = 0
-offset_left = 396.0
-offset_top = 86.0
-offset_right = 760.0
-offset_bottom = 526.0
+offset_left = 298.0
+offset_top = 82.0
+offset_right = 662.0
+offset_bottom = 522.0
 texture = ExtResource("3_dclby")
 
 [node name="corazon" type="TextureRect" parent="nivel 2/TextureRect"]
+layout_mode = 0
 offset_left = 640.0
 offset_top = 203.0
 offset_right = 688.0
@@ -104,6 +109,7 @@ offset_bottom = 75.0
 text = "3 corazones "
 
 [node name="botella" type="TextureRect" parent="nivel 2/TextureRect/corazon"]
+layout_mode = 0
 offset_left = 260.0
 offset_top = -14.0
 offset_right = 308.0
@@ -111,6 +117,7 @@ offset_bottom = 34.0
 texture = ExtResource("5_0ennr")
 
 [node name="botella" type="Label" parent="nivel 2/TextureRect/corazon/botella"]
+layout_mode = 0
 offset_left = -35.0
 offset_top = 55.0
 offset_right = 100.0
@@ -119,6 +126,7 @@ text = "3 pociones de ver
  "
 
 [node name="estrella" type="TextureRect" parent="nivel 2/TextureRect/corazon"]
+layout_mode = 0
 offset_left = 131.0
 offset_top = -4.0
 offset_right = 179.0
@@ -143,11 +151,12 @@ texture = ExtResource("7_0oeq4")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 309.0
-offset_right = 709.0
-offset_bottom = 368.0
-theme_override_font_sizes/font_size = 30
+offset_left = 373.0
+offset_top = 320.0
+offset_right = 704.0
+offset_bottom = 379.0
+theme_override_fonts/font = ExtResource("3_da0px")
+theme_override_font_sizes/font_size = 35
 text = "Crear una Pocima con:"
 horizontal_alignment = 1
 
@@ -162,9 +171,9 @@ centered = false
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
 offset_left = 402.0
-offset_top = 468.0
+offset_top = 490.0
 offset_right = 696.0
-offset_bottom = 509.0
+offset_bottom = 531.0
 theme = SubResource("Theme_7y546")
 text = "Jugar "
 script = ExtResource("4_gdtwp")
@@ -219,5 +228,17 @@ text = "2"
 layout_mode = 2
 texture = ExtResource("7_ie5f6")
 stretch_mode = 3
+
+[node name="Estrella" type="Sprite2D" parent="."]
+position = Vector2(164, 168)
+texture = ExtResource("6_k8bsi")
+
+[node name="Estrella2" type="Sprite2D" parent="."]
+position = Vector2(1158, 459)
+texture = ExtResource("6_k8bsi")
+
+[node name="Estrella3" type="Sprite2D" parent="."]
+position = Vector2(981, 82)
+texture = ExtResource("6_k8bsi")
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_nivel2_pressed"]

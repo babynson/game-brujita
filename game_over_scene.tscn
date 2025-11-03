@@ -82,6 +82,7 @@ offset_bottom = 316.0
 texture = ExtResource("3_vio68")
 
 [node name="TextureRect" type="TextureRect" parent="PERdiste/TextureRect"]
+layout_mode = 0
 offset_left = -94.0
 offset_top = -194.0
 offset_right = -30.0

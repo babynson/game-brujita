@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://q24wmogeqe4p"]
+
+[ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_qsns3"]
+[ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_aqdjs"]
+[ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="3_cpgvt"]
+[ext_resource type="Texture2D" uid="uid://uc7uiq64gl3b" path="res://assets/CHARLYCONMEDICINA.png" id="4_nk186"]
+[ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="5_jnsq4"]
+[ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="5_lunmf"]
+[ext_resource type="Script" path="res://jugar.gd" id="6_mxaq8"]
+[ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="7_sby20"]
+[ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="9_a106v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
+resource_name = "boton_verde"
+bg_color = Color(0, 0.7, 0.56, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+corner_detail = 10
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_7y546"]
+default_font_size = 30
+Button/fonts/font = ExtResource("5_jnsq4")
+Button/styles/focus = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/hover = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/normal = SubResource("StyleBoxFlat_hu7qx")
+Button/styles/pressed = null
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qsns3")
+expand_mode = 1
+
+[node name="FondoInstrucciones" type="Sprite2D" parent="."]
+position = Vector2(610, 313)
+scale = Vector2(1.2526, 1.2526)
+texture = ExtResource("2_aqdjs")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 202.0
+offset_right = 376.0
+offset_bottom = 642.0
+texture = ExtResource("3_cpgvt")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 213.0
+offset_right = 659.0
+offset_bottom = 653.0
+texture = ExtResource("4_nk186")
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 58.0
+offset_right = 838.0
+offset_bottom = 237.0
+theme_override_fonts/font = ExtResource("5_lunmf")
+theme_override_font_sizes/font_size = 60
+text = "Excelente! 
+Pasaste el nivel 1 "
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 579.0
+offset_top = 273.0
+offset_right = 1002.0
+offset_bottom = 369.0
+theme_override_font_sizes/font_size = 25
+text = "Ahora charly va a poder empezar
+su tratamiento con su medicina! 
+"
+
+[node name="Fondo-chico-02" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(-137, 6)
+scale = Vector2(0.484328, 0.484328)
+texture = ExtResource("1_qsns3")
+centered = false
+
+[node name="jugar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 388.0
+offset_right = 969.0
+offset_bottom = 433.0
+theme = SubResource("Theme_7y546")
+text = "Continuar"
+script = ExtResource("6_mxaq8")
+
+[node name="corazon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 185.0
+offset_right = 976.0
+offset_bottom = 233.0
+texture = ExtResource("7_sby20")
+
+[node name="Estrella" type="Sprite2D" parent="."]
+position = Vector2(560, 84)
+texture = ExtResource("9_a106v")
+
+[connection signal="pressed" from="jugar" to="jugar" method="_on_Instruccion_nivel2_pressed"]

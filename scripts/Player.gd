@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 @export var required_goods := 30        # necesarios para pasar de nivel
-@export var speed: float = 280.0
+@export var speed: float = 380.0
 
-@export var genial: String = "¡Bravo! +1"   # mensaje para buenos
+@export var genial: String = "¡Genial! +1"   # mensaje para buenos
 @export var ouch: String = "¡Ouch! -1"       # mensaje para malos
 
 @onready var message_label: Label = $Message

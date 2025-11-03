@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://tkhclk2o55sl"]
+[gd_scene load_steps=14 format=3 uid="uid://tkhclk2o55sl"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_j4ewn"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_ovttw"]
@@ -6,7 +6,8 @@
 [ext_resource type="FontFile" uid="uid://cnk7h0u8ek0fn" path="res://assets/fonts/BRLNSR.TTF" id="3_vsq0t"]
 [ext_resource type="AudioStream" uid="uid://c80m654b1h8cw" path="res://assets/musi/sonido-pasodenivel.mp3" id="5_jukyj"]
 [ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="6_enjtv"]
-[ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="7_ayb14"]
+[ext_resource type="Texture2D" uid="uid://c2bn1qgf1mryb" path="res://assets/gatos-ganaste.png" id="7_mlb1g"]
+[ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="7_qmnnk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -71,18 +72,9 @@ texture = ExtResource("1_j4ewn")
 expand_mode = 1
 
 [node name="FondoInstrucciones" type="Sprite2D" parent="."]
-position = Vector2(621, 312)
-scale = Vector2(1.02928, 1.08854)
+position = Vector2(594, 343)
+scale = Vector2(1.24597, 1.36979)
 texture = ExtResource("2_ovttw")
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 295.0
-offset_top = 112.0
-offset_right = 722.0
-offset_bottom = 222.0
-theme_override_font_sizes/font_size = 70
-text = "GANASTE!"
 
 [node name="Fondo-chico-02" type="Sprite2D" parent="."]
 visible = false
@@ -92,66 +84,92 @@ scale = Vector2(0.484328, 0.484328)
 texture = ExtResource("1_j4ewn")
 centered = false
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 502.0
-offset_top = 234.0
-offset_right = 898.0
-offset_bottom = 375.0
-theme_override_font_sizes/font_size = 40
-text = "Queres jugar 
-de vuelta?"
-horizontal_alignment = 1
-
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 514.0
-offset_top = 366.0
-offset_right = 923.0
-offset_bottom = 406.0
+offset_left = 818.0
+offset_top = 442.0
+offset_right = 1028.0
+offset_bottom = 482.0
 theme = SubResource("Theme_7y546")
-text = "Jugar"
+text = "Volver a jugar "
 script = ExtResource("3_ffgmq")
 
 [node name="jugar2" type="Button" parent="."]
-offset_left = 514.0
-offset_top = 420.0
-offset_right = 923.0
-offset_bottom = 460.0
+layout_mode = 0
+offset_left = 815.0
+offset_top = 494.0
+offset_right = 1044.0
+offset_bottom = 534.0
 theme = SubResource("Theme_hc033")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_br0cn")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_v2m84")
 text = "Salir "
 script = ExtResource("3_ffgmq")
 
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 321.0
+offset_top = 178.0
+offset_right = 375.0
+offset_bottom = 230.0
+texture = ExtResource("6_enjtv")
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect4"]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 10.0
+offset_right = 658.0
+offset_bottom = 79.0
+texture = ExtResource("6_enjtv")
+
+[node name="Label" type="Label" parent="TextureRect4/TextureRect3"]
+layout_mode = 0
+offset_left = -208.0
+offset_top = 127.0
+offset_right = 68.0
+offset_bottom = 235.0
+theme_override_fonts/font = ExtResource("3_vsq0t")
+theme_override_font_sizes/font_size = 30
+text = "Los gatitos ya  tienen
+su medicina! "
+
+[node name="Estrella" type="Sprite2D" parent="TextureRect4"]
+position = Vector2(320, 40)
+texture = ExtResource("7_qmnnk")
+
 [node name="TextureRect3" type="TextureRect" parent="."]
-offset_left = 871.0
-offset_top = 187.0
-offset_right = 942.0
-offset_bottom = 256.0
-texture = ExtResource("6_enjtv")
-
-[node name="TextureRect3" type="TextureRect" parent="TextureRect3"]
-offset_left = -650.0
-offset_top = 87.0
-offset_right = -579.0
-offset_bottom = 156.0
-texture = ExtResource("6_enjtv")
-
-[node name="TextureRect3" type="TextureRect" parent="TextureRect3/TextureRect3"]
-offset_left = 744.0
-offset_top = 142.0
-offset_right = 815.0
-offset_bottom = 211.0
+layout_mode = 0
+offset_left = 114.0
+offset_top = 128.0
+offset_right = 195.0
+offset_bottom = 207.0
 texture = ExtResource("6_enjtv")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 209.0
-offset_right = 508.0
-offset_bottom = 649.0
-texture = ExtResource("7_ayb14")
+offset_left = 4.0
+offset_top = 178.0
+offset_right = 826.0
+offset_bottom = 659.0
+texture = ExtResource("7_mlb1g")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 64.0
+offset_right = 546.0
+offset_bottom = 160.0
+theme_override_fonts/font = ExtResource("3_vsq0t")
+theme_override_font_sizes/font_size = 80
+text = "Ganaste!"
+
+[node name="Estrella" type="Sprite2D" parent="."]
+position = Vector2(1005, 389)
+texture = ExtResource("7_qmnnk")
+
+[node name="Estrella2" type="Sprite2D" parent="."]
+position = Vector2(838, 600)
+texture = ExtResource("7_qmnnk")
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_empezar_pressed"]
 [connection signal="pressed" from="jugar2" to="jugar2" method="_on_salir_pressed"]
