@@ -115,3 +115,5 @@ text = "Tiempo 5:00"
 
 [node name="TimerCustom" type="Node2D" parent="."]
 script = ExtResource("6_snjik")
+SetMinutos = 1
+SetSegundos = 30
