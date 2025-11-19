@@ -65,9 +65,8 @@ func _on_botella2_changed(new_botella2: int) -> void:
 func _on_score_changed(new_score: int) -> void:
 	score_label.text = "Puntos: %d" % new_score
 
-	
-	
-	#cuadno llego a 2 me manda a cambiar de escena 
+#cuadno llego a 2 me manda a cambiar de escena
+ 
 	if new_score >= 30:
 		audio_player.stream = nivel_ok_Sound
 		audio_player.play()

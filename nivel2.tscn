@@ -70,8 +70,8 @@ offset_right = 943.0
 offset_bottom = 301.0
 theme_override_fonts/font = ExtResource("3_da0px")
 theme_override_font_sizes/font_size = 25
-text = "Alvaro se rompio la pata! hay que hacerle una cura para 
-que vuelva a pasear por los techos "
+text = "¡Alvaro se rompió la pata! Hay que crear el remedio para 
+que vuelva a pasear por los techos."
 
 [node name="nivel 2" type="Label" parent="."]
 layout_mode = 0
@@ -151,14 +151,13 @@ texture = ExtResource("7_0oeq4")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 373.0
+offset_left = 411.0
 offset_top = 320.0
 offset_right = 704.0
 offset_bottom = 379.0
 theme_override_fonts/font = ExtResource("3_da0px")
 theme_override_font_sizes/font_size = 35
-text = "Crear una Pocima con:"
-horizontal_alignment = 1
+text = "Necesitas juntar: "
 
 [node name="Fondo-chico-02" type="Sprite2D" parent="."]
 visible = false

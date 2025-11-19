@@ -93,9 +93,9 @@ offset_right = 938.0
 offset_bottom = 331.0
 theme_override_fonts/font = ExtResource("4_d7vr2")
 theme_override_font_sizes/font_size = 25
-text = "Charly es mi amigo no ve muy bien y esta muy triste
-necesito armar una pocima con una formula de 
-mi abuela Nala ME AYUDAS a recolectar ? "
+text = "Mi amigo Charly no ve muy bien y está muy triste.
+Necesito una pócima con una fórmula de 
+mi abuela Nala. ¿Me ayudas a recolectar?: "
 
 [node name="Fondo-chico-02" type="Sprite2D" parent="."]
 visible = false

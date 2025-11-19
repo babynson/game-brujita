@@ -86,20 +86,20 @@ centered = false
 
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 818.0
-offset_top = 442.0
-offset_right = 1028.0
-offset_bottom = 482.0
+offset_left = 707.0
+offset_top = 410.0
+offset_right = 948.0
+offset_bottom = 450.0
 theme = SubResource("Theme_7y546")
 text = "Volver a jugar "
 script = ExtResource("3_ffgmq")
 
 [node name="jugar2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 815.0
-offset_top = 494.0
-offset_right = 1044.0
-offset_bottom = 534.0
+offset_left = 697.0
+offset_top = 466.0
+offset_right = 962.0
+offset_bottom = 506.0
 theme = SubResource("Theme_hc033")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_br0cn")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_v2m84")
@@ -130,8 +130,9 @@ offset_right = 68.0
 offset_bottom = 235.0
 theme_override_fonts/font = ExtResource("3_vsq0t")
 theme_override_font_sizes/font_size = 30
-text = "Los gatitos ya  tienen
+text = "¡Los gatitos ya tienen
 su medicina! "
+horizontal_alignment = 1
 
 [node name="Estrella" type="Sprite2D" parent="TextureRect4"]
 position = Vector2(320, 40)
@@ -161,10 +162,10 @@ offset_right = 546.0
 offset_bottom = 160.0
 theme_override_fonts/font = ExtResource("3_vsq0t")
 theme_override_font_sizes/font_size = 80
-text = "Ganaste!"
+text = "¡Ganaste!"
 
 [node name="Estrella" type="Sprite2D" parent="."]
-position = Vector2(1005, 389)
+position = Vector2(1046, 500)
 texture = ExtResource("7_qmnnk")
 
 [node name="Estrella2" type="Sprite2D" parent="."]
