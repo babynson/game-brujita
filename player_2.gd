@@ -6,8 +6,12 @@ extends CharacterBody2D
 @export var genial: String = "¡Bravo! +1"   # mensaje para buenos
 @export var ouch: String = "¡buuuu! -1"       # mensaje para malos
 
+@export var repetido: String = "Ya lo tenés! -1"       # mensaje para malos
+
+
 @onready var message_label: Label = $Message
 @onready var message_label2: Label = $Message2
+@onready var message_label3: Label = $Message3
 @onready var audio_player: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 
 # sonidos
@@ -48,6 +52,7 @@ func _ready() -> void:
 	add_child(audio_player)
 	message_label.visible = false
 	message_label2.visible = false
+	message_label3.visible = false
 
 	# IMPORTANTE: conectar la señal del CatchArea (si no la conectaste desde el editor)
 	# $CatchArea.area_entered.connect(_on_catch_area_area_entered)
@@ -95,7 +100,7 @@ func add_ojo():
 		# Ya llegué al objetivo → pierdo una vida
 		print("⚠️ Te pasaste del máximo de ojos, perdés una vida")
 		if has_method("lose_life"):
-			_show_message2(ouch)
+			_show_message3(repetido)
 			_play(fail_sound)
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
@@ -116,7 +121,7 @@ func add_caramelo():
 		# Ya llegué al objetivo → pierdo una vida
 		print("⚠️ Te pasaste del máximo de caramelo, perdés una vida")
 		if has_method("lose_life"):
-			_show_message2(ouch)
+			_show_message3(repetido)
 			_play(fail_sound)
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
@@ -137,7 +142,7 @@ func add_botella2():
 		# Ya llegué al objetivo → pierdo una vida
 		print("⚠️ Te pasaste del máximo de botellas2, perdés una vida")
 		if has_method("lose_life"):
-			_show_message2(ouch)
+			_show_message3(repetido)
 			_play(fail_sound)
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
@@ -163,6 +168,7 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 
 	elif area.is_in_group("bad_objects"):
 		print("agarre objeto malo:")	
+		
 		lose_life()
 		area.queue_free()
 
@@ -179,6 +185,12 @@ func _show_message2(txt: String) -> void:
 	await get_tree().create_timer(0.8).timeout
 	message_label2.visible = false
 
+func _show_message3(txt: String) -> void:
+	message_label3.text = txt
+	message_label3.visible = true
+	await get_tree().create_timer(0.8).timeout
+	message_label3.visible = false
+	
 func _play(stream: AudioStream) -> void:
 	if stream == null:
 		return
