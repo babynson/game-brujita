@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://q24wmogeqe4p"]
+[gd_scene load_steps=13 format=3 uid="uid://q24wmogeqe4p"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_qsns3"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_aqdjs"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://jugar.gd" id="6_mxaq8"]
 [ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="7_sby20"]
 [ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="9_a106v"]
+[ext_resource type="AudioStream" uid="uid://c31fgsy1hr7w5" path="res://assets/musi/nivel-logrado.mp3" id="10_ydxmn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -125,5 +126,10 @@ texture = ExtResource("7_sby20")
 [node name="Estrella" type="Sprite2D" parent="."]
 position = Vector2(560, 84)
 texture = ExtResource("9_a106v")
+
+[node name="Nivel-logrado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ydxmn")
+volume_db = 0.5
+autoplay = true
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_Instruccion_nivel2_pressed"]

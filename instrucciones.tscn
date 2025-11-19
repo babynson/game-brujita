@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://br476iw7t14d8"]
+[gd_scene load_steps=18 format=3 uid="uid://br476iw7t14d8"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_pc842"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_2xsrb"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="11_taon2"]
 [ext_resource type="Texture2D" uid="uid://r6ulbajo3fqp" path="res://assets/JUGADOR-03-2.png" id="13_th6vg"]
 [ext_resource type="Texture2D" uid="uid://d0sfx1exng53q" path="res://assets/paletas2.png" id="14_lgs06"]
+[ext_resource type="AudioStream" uid="uid://du8pmkd8vqacq" path="res://assets/musi/musica-bg.mp3" id="15_vgmpp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -229,5 +230,10 @@ texture = ExtResource("13_th6vg")
 [node name="Paletas2" type="Sprite2D" parent="."]
 position = Vector2(1252, 580)
 texture = ExtResource("14_lgs06")
+
+[node name="Mystery-music-loop-226835" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_vgmpp")
+volume_db = 0.1
+autoplay = true
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_play_pressed"]

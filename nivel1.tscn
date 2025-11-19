@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://boeulkxhxr7ba"]
+[gd_scene load_steps=14 format=3 uid="uid://boeulkxhxr7ba"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_wi8ga"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_wcfpy"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="6_d45je"]
 [ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="7_0nf5f"]
 [ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="8_xlu15"]
+[ext_resource type="AudioStream" uid="uid://du8pmkd8vqacq" path="res://assets/musi/musica-bg.mp3" id="11_wwch8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -162,5 +163,10 @@ offset_top = 58.0
 offset_right = 60.0
 offset_bottom = 81.0
 text = "4 estrellas"
+
+[node name="Musica-bg" type="AudioStreamPlayer" parent="corazon/estrella"]
+stream = ExtResource("11_wwch8")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_play_pressed"]

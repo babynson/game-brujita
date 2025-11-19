@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ctopn1qe21viu"]
+[gd_scene load_steps=17 format=3 uid="uid://ctopn1qe21viu"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_5o7br"]
 [ext_resource type="FontFile" uid="uid://bggp2qsb742jt" path="res://assets/fonts/HPSimplified.ttf" id="1_ca8jh"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c6qv7ha5kk20d" path="res://assets/ojo.png" id="10_5qpj2"]
 [ext_resource type="Texture2D" uid="uid://d3muakdeml1cs" path="res://assets/calabaza-mala.png" id="11_f318a"]
 [ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="12_xyelp"]
+[ext_resource type="AudioStream" uid="uid://du8pmkd8vqacq" path="res://assets/musi/musica-bg.mp3" id="13_rypeh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlces"]
 bg_color = Color(0.57, 0.14, 1, 1)
@@ -208,6 +209,11 @@ offset_top = 228.0
 offset_right = 730.0
 offset_bottom = 293.0
 texture = ExtResource("12_xyelp")
+
+[node name="Musica-bg" type="AudioStreamPlayer" parent="estrella"]
+stream = ExtResource("13_rypeh")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/empezar" to="VBoxContainer/empezar" method="_on_empezar_pressed"]
 [connection signal="pressed" from="VBoxContainer/instrucciones" to="VBoxContainer/instrucciones" method="_on_instruccion_pressed"]

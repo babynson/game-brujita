@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://ync8evin8kvd" path="res://HUD2.tscn" id="3_adw8e"]
 [ext_resource type="PackedScene" uid="uid://bh7i34i82yok6" path="res://SpawnObjects2.tscn" id="4_jg2xq"]
 [ext_resource type="Script" path="res://spawn_objects_2.gd" id="6_avwah"]
-[ext_resource type="AudioStream" uid="uid://ba5pv5bfomnqx" path="res://assets/musi/mystery-music-loop-226835.mp3" id="6_rva0c"]
 [ext_resource type="PackedScene" uid="uid://chyd2bdf11mte" path="res://GoodObject4.tscn" id="7_uvbxc"]
 [ext_resource type="PackedScene" uid="uid://bsned3nlf8pay" path="res://GoodObject5.tscn" id="8_tvqwj"]
 [ext_resource type="PackedScene" uid="uid://co3xkaxbgerc8" path="res://GoodObject6.tscn" id="9_r27ue"]
 [ext_resource type="PackedScene" uid="uid://ccjn0hhivjolq" path="res://BadObject3.tscn" id="10_yn1nf"]
 [ext_resource type="PackedScene" uid="uid://cv4ul0yi14a7j" path="res://BadObject4.tscn" id="11_qekxr"]
+[ext_resource type="AudioStream" uid="uid://du8pmkd8vqacq" path="res://assets/musi/musica-bg.mp3" id="11_tapfa"]
 [ext_resource type="Script" path="res://TimeCustom.gd" id="12_2637f"]
 
 [node name="Main-level2" type="Node2D"]
@@ -34,9 +34,12 @@ bad_objects = Array[PackedScene]([ExtResource("10_yn1nf"), ExtResource("11_qekxr
 [node name="Mystery-music-loop-226835" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(235, 233)
-stream = ExtResource("6_rva0c")
-volume_db = 0.937
+stream = ExtResource("11_tapfa")
+volume_db = -10.0
 autoplay = true
+
+[node name="Musica-bg" type="AudioStreamPlayer" parent="Mystery-music-loop-226835"]
+stream = ExtResource("11_tapfa")
 
 [node name="Node" type="Node" parent="Mystery-music-loop-226835"]
 

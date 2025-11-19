@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://mpbg1mixb2ks"]
+[gd_scene load_steps=17 format=3 uid="uid://mpbg1mixb2ks"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_x1581"]
 [ext_resource type="Texture2D" uid="uid://3u273sjxqa77" path="res://assets/FONDO-instrucciones-nivel2.jpg" id="2_k2bre"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bn0tpgy5in6n4" path="res://assets/paletas.png" id="6_l1arr"]
 [ext_resource type="Texture2D" uid="uid://bgimcewgeiuq7" path="res://assets/brujito-alquimista.png" id="7_0oeq4"]
 [ext_resource type="Texture2D" uid="uid://c8vjhjhakisr3" path="res://assets/calabaza.png" id="7_ie5f6"]
+[ext_resource type="AudioStream" uid="uid://du8pmkd8vqacq" path="res://assets/musi/musica-bg.mp3" id="14_xj303"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -239,5 +240,10 @@ texture = ExtResource("6_k8bsi")
 [node name="Estrella3" type="Sprite2D" parent="."]
 position = Vector2(981, 82)
 texture = ExtResource("6_k8bsi")
+
+[node name="Mystery-music-loop-226835" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_xj303")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_nivel2_pressed"]

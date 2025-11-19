@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://g4mmx2ihixwp" path="res://assets/FONDO-JUEGO-nivel1.jpg" id="1_ip2g2"]
 [ext_resource type="PackedScene" uid="uid://tbebn3ogsxgp" path="res://HUD.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://ca4uln8ivn87m" path="res://SpawnObjects.tscn" id="3"]
-[ext_resource type="AudioStream" uid="uid://ba5pv5bfomnqx" path="res://assets/musi/mystery-music-loop-226835.mp3" id="6_3dxm6"]
+[ext_resource type="AudioStream" uid="uid://du8pmkd8vqacq" path="res://assets/musi/musica-bg.mp3" id="5_u7poy"]
 [ext_resource type="Script" path="res://TimeCustom.gd" id="6_us4yf"]
 
 [node name="Main-level1" type="Node2D"]
@@ -38,8 +38,8 @@ offset_bottom = 38.0
 [node name="Mystery-music-loop-226835" type="AudioStreamPlayer2D" parent="."]
 visible = false
 position = Vector2(235, 233)
-stream = ExtResource("6_3dxm6")
-volume_db = 0.937
+stream = ExtResource("5_u7poy")
+volume_db = -10.0
 autoplay = true
 
 [node name="TimerCustom" type="Node2D" parent="."]

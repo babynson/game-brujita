@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tkhclk2o55sl"]
+[gd_scene load_steps=15 format=3 uid="uid://tkhclk2o55sl"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_j4ewn"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_ovttw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="6_enjtv"]
 [ext_resource type="Texture2D" uid="uid://c2bn1qgf1mryb" path="res://assets/gatos-ganaste.png" id="7_mlb1g"]
 [ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="7_qmnnk"]
+[ext_resource type="AudioStream" uid="uid://dtvmnvj8x7riu" path="res://assets/musi/ganaste.mp3" id="9_d038w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -171,6 +172,11 @@ texture = ExtResource("7_qmnnk")
 [node name="Estrella2" type="Sprite2D" parent="."]
 position = Vector2(838, 600)
 texture = ExtResource("7_qmnnk")
+
+[node name="Nivel-logrado" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_d038w")
+volume_db = 0.497
+autoplay = true
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_empezar_pressed"]
 [connection signal="pressed" from="jugar2" to="jugar2" method="_on_salir_pressed"]

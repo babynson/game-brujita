@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cq7fftkc61yxb"]
+[gd_scene load_steps=11 format=3 uid="uid://cq7fftkc61yxb"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_dcu8r"]
 [ext_resource type="Texture2D" uid="uid://op6x0rmdb1cn" path="res://assets/F_perdiste.png" id="2_g2jsj"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d4k664ml0j5fl" path="res://assets/calabera.png" id="3_vio68"]
 [ext_resource type="Texture2D" uid="uid://c7d2plgk561l3" path="res://assets/objetos-03.png" id="4_0xd7d"]
 [ext_resource type="Texture2D" uid="uid://3eupon22u4s7" path="res://assets/brujito-alquimista-perdiste.png" id="4_x0bs0"]
+[ext_resource type="AudioStream" uid="uid://b4b80x62c1qec" path="res://assets/musi/perdiste-bg.mp3" id="7_b3ddn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uba74"]
 bg_color = Color(0.0980524, 0.564451, 0.551976, 1)
@@ -114,5 +115,10 @@ offset_top = 222.0
 offset_right = 393.0
 offset_bottom = 662.0
 texture = ExtResource("4_x0bs0")
+
+[node name="Perdiste-bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_b3ddn")
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="play" to="play" method="_on_play_pressed"]
