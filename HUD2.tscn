@@ -114,4 +114,4 @@ text = "Tiempo:"
 
 [node name="TimerCustom2" type="Node2D" parent="."]
 script = ExtResource("6_iucfb")
-SetSegundos = 20
+SetSegundos = 40

@@ -15,8 +15,13 @@ extends CharacterBody2D
 @export var fail_sound: AudioStream  = preload("res://assets/musi/fallo.mp3")
 #@export var level_ok_sound: AudioStream = preload("res://assets/musi/level_ok.mp3") # poné el que quieras
 
-@export var tipo := "corazon"  # puede ser "estrella" o "botella"
+#@export var tipo := "corazon"  # puede ser "estrella" o "botella"
 
+enum TipoObjeto { corazon, estrella, botella, ojo, caramelo, botella2 }
+@export var tipo: TipoObjeto = TipoObjeto.ojo
+@export var ojo_objetivo: int = 3  # máximo permitido 
+@export var caramelo_objetivo: int = 4 # máximo permitido 
+@export var botella2_objetivo: int = 2 # máximo permitido 
 
 var score: int = 0
 var lives: int = 5
@@ -63,8 +68,8 @@ func _process(delta: float) -> void:
 func add_point() -> void:
 	score += 1
 	score_changed.emit(score)
-	_show_message(genial)
-	_play(point_sound)
+	#_show_message(genial)
+	#_play(point_sound)
 
 func lose_life() -> void:
 	lives -= 1
@@ -73,6 +78,74 @@ func lose_life() -> void:
 	_play(fail_sound)
 	if lives <= 0:
 		game_over.emit()
+		
+# agrego conteo de objetos 2 
+		
+#funcion corazon 
+func add_ojo():
+	# Todavía no llegué al objetivo → sumo
+	if ojo < ojo_objetivo:
+		ojo += 1
+		emit_signal("ojo_changed", ojo)
+		item_collected.emit("ojo", ojo)
+		_show_message(genial)
+		_play(point_sound)
+		print("❤️ Sumo un ojo. Total:", ojo)
+	else:
+		# Ya llegué al objetivo → pierdo una vida
+		print("⚠️ Te pasaste del máximo de ojos, perdés una vida")
+		if has_method("lose_life"):
+			_show_message2(ouch)
+			_play(fail_sound)
+			lose_life()  # si ya tenés esta función, mejor reutilizarla
+		else:
+			lives -= 1
+			emit_signal("lives_changed", lives)		
+
+#funcion estrella 
+func add_caramelo():
+	# Todavía no llegué al objetivo → sumo
+	if caramelo < caramelo_objetivo:
+		caramelo += 1
+		emit_signal("caramelo_changed", caramelo)
+		item_collected.emit("caramelo", caramelo)
+		_show_message(genial)
+		_play(point_sound)
+		print("❤️ Sumo una caramelo. Total:", caramelo)
+	else:
+		# Ya llegué al objetivo → pierdo una vida
+		print("⚠️ Te pasaste del máximo de caramelo, perdés una vida")
+		if has_method("lose_life"):
+			_show_message2(ouch)
+			_play(fail_sound)
+			lose_life()  # si ya tenés esta función, mejor reutilizarla
+		else:
+			lives -= 1
+			emit_signal("lives_changed", lives)		
+
+#funcion botella 
+func add_botella2():
+	# Todavía no llegué al objetivo → sumo
+	if botella2 < botella2_objetivo:
+		botella2 += 1
+		emit_signal("botella2_changed", botella2)
+		item_collected.emit("botella2", botella2)
+		_show_message(genial)
+		_play(point_sound)
+		print("❤️ Sumo una botella2. Total:", botella2)
+	else:
+		# Ya llegué al objetivo → pierdo una vida
+		print("⚠️ Te pasaste del máximo de botellas2, perdés una vida")
+		if has_method("lose_life"):
+			_show_message2(ouch)
+			_play(fail_sound)
+			lose_life()  # si ya tenés esta función, mejor reutilizarla
+		else:
+			lives -= 1
+			emit_signal("lives_changed", lives)		
+
+
+
 
 # ------- COLISIÓN (con CatchArea.area_entered) -------
 func _on_catch_area_area_entered(area: Area2D) -> void:
