@@ -115,7 +115,6 @@ text = "Instrucciones
 script = ExtResource("3_n00if")
 
 [node name="escena 2" type="Button" parent="VBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_ca8jh")
 theme_override_font_sizes/font_size = 40

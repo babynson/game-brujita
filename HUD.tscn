@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://tbebn3ogsxgp"]
+[gd_scene load_steps=8 format=3 uid="uid://tbebn3ogsxgp"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="2_bn8wb"]
 [ext_resource type="Texture2D" uid="uid://cgvtxvb2u2yav" path="res://assets/Corazon.png" id="2_foonm"]
 [ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="3_xq6g4"]
 [ext_resource type="Texture2D" uid="uid://c605b3fkyomkj" path="res://assets/botellita2.png" id="4_rtbxp"]
+[ext_resource type="Script" path="res://TimeCustom.gd" id="6_snjik"]
 
 [sub_resource type="Theme" id="Theme_qyu62"]
 
@@ -105,3 +106,12 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bn8wb")
 theme_override_font_sizes/font_size = 30
 text = "vidas: 4"
+
+[node name="Timer" type="Label" parent="Margin/Row"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bn8wb")
+theme_override_font_sizes/font_size = 30
+text = "Tiempo 5:00"
+
+[node name="TimerCustom" type="Node2D" parent="."]
+script = ExtResource("6_snjik")

@@ -1,7 +1,8 @@
 extends Control
-
+@onready var timer2 := $TimerCustom2
 @onready var score_label: Label = $Margin/Row/Score
 @onready var lives_label: Label = $Margin/Row/Lives
+@onready var timer2_label: Label = $Margin/Row/Timer
 @export var nivel_ok_Sound: AudioStream = preload("res://assets/musi/nivel-logrado.mp3")
 @onready var audio_player: AudioStreamPlayer = AudioStreamPlayer.new()
 #cargo variables para cambiar de escenas 
@@ -36,7 +37,15 @@ func _ready() -> void:
 	
 		
 		player2.level_complete.connect(_on_player2_level2_complete)
-
+		
+		timer2.time_up.connect(_on_time_up2)
+func _process(delta2):
+	timer2_label.text = timer2.get_time_string()
+	
+func _on_time_up2():
+	print("⏰ ¡SE ACABÓ EL TIEMPO nivel 2!")
+	get_tree().change_scene_to_file("res://game_over_scene.tscn")
+		
 func _on_item_collected(tipo: String, count: int) -> void:
 	match tipo:
 		"ojo":
