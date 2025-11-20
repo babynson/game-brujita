@@ -1,5 +1,10 @@
 extends Control
-@onready var timer := $TimerCustom
+#timer
+@onready var timer_custom: TimerCustom = $TimerCustom
+
+#fin timer 
+
+
 @onready var score_label: Label = $Margin/Row/Score
 @onready var lives_label: Label = $Margin/Row/Lives
 @onready var timer_label: Label = $Margin/Row/Timer
@@ -13,6 +18,8 @@ extends Control
 @onready var estrella_label: Label = $Objetos/lista2/Estrella
 @onready var botella_label: Label = $Objetos/lista3/Botella
 #signal game_over
+
+
 
 func _ready() -> void:
 	var player := get_tree().get_first_node_in_group("player")
@@ -37,9 +44,22 @@ func _ready() -> void:
 		
 		player.level_complete.connect(_on_player_level1_complete)
 		#player.level2_complete.connect(_on_player_level2_complete)
-		timer.time_up.connect(_on_time_up)
+		timer_custom.time_up.connect(_on_time_up)
 func _process(delta):
-	timer_label.text = timer.get_time_string()
+	
+	# 1) Texto del timer timer_label.text = timer.get_time_string()
+	var tiempo: String = timer_custom.get_time_string()
+	timer_label.text = tiempo
+
+	# 2) Segundos totales restantes
+	var total_left: int = timer_custom.minutos * 60 + int(timer_custom.segundos)
+
+	# 3) Cambiar color cuando falten 10 segundos
+	if total_left <= 10:
+		var alpha := 0.5 + 0.5 * sin(Time.get_ticks_msec() * 0.01)
+		timer_label.modulate = Color(1, 0, 0)   # rojo
+	else:
+		timer_label.modulate = Color(1, 1, 1)   # blanco (o el que uses)
 func _on_time_up():
 	print("⏰ ¡SE ACABÓ EL TIEMPO!")
 	get_tree().change_scene_to_file("res://game_over_scene.tscn")

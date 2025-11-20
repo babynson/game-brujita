@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ctopn1qe21viu"]
+[gd_scene load_steps=18 format=3 uid="uid://ctopn1qe21viu"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_5o7br"]
 [ext_resource type="FontFile" uid="uid://bggp2qsb742jt" path="res://assets/fonts/HPSimplified.ttf" id="1_ca8jh"]
@@ -24,6 +24,8 @@ corner_radius_bottom_left = 50
 corner_detail = 20
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_6nifr"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_fciso"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32mmd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -71,6 +73,9 @@ alignment = 1
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.980392, 0.737255, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("2_2j82s")
 theme_override_font_sizes/font_size = 50
 text = "Alquimista"
@@ -133,6 +138,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("1_ca8jh")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxLine_fciso")
 theme_override_styles/normal = SubResource("StyleBoxFlat_32mmd")
 text = "Salir"
 script = ExtResource("3_n00if")
