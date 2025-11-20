@@ -22,15 +22,20 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.913
 anchor_right = 0.913
-offset_left = -42.776
-offset_top = -1.0
-offset_right = 100.224
-offset_bottom = 237.0
+offset_left = -50.776
+offset_top = 29.0
+offset_right = 92.224
+offset_bottom = 267.0
 grow_horizontal = 0
 size_flags_horizontal = 8
 
 [node name="Label" type="Label" parent="Objetos"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "Objetivos "
@@ -45,6 +50,11 @@ stretch_mode = 3
 
 [node name="ojo" type="Label" parent="Objetos/lista"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "0"
@@ -59,6 +69,11 @@ stretch_mode = 3
 
 [node name="caramelo" type="Label" parent="Objetos/lista2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "0"
@@ -74,6 +89,11 @@ stretch_mode = 3
 
 [node name="botella2" type="Label" parent="Objetos/lista3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "0
@@ -96,18 +116,33 @@ theme_override_constants/separation = 50
 [node name="Score" type="Label" parent="Margin/Row"]
 clip_contents = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "Puntos: 0"
 
 [node name="Lives" type="Label" parent="Margin/Row"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "vidas: 4"
 
 [node name="Timer" type="Label" parent="Margin/Row"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("2_dreg5")
 theme_override_font_sizes/font_size = 30
 text = "Tiempo:"

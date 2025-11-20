@@ -32,6 +32,11 @@ size_flags_horizontal = 8
 
 [node name="Label" type="Label" parent="Objetos"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_bn8wb")
 theme_override_font_sizes/font_size = 30
 text = "Objetivos"
@@ -46,6 +51,11 @@ stretch_mode = 3
 
 [node name="Corazon" type="Label" parent="Objetos/lista"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_bn8wb")
 theme_override_font_sizes/font_size = 30
 text = "0"
@@ -60,6 +70,11 @@ stretch_mode = 3
 
 [node name="Estrella" type="Label" parent="Objetos/lista2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_bn8wb")
 theme_override_font_sizes/font_size = 30
 text = "0"
@@ -75,6 +90,11 @@ stretch_mode = 3
 
 [node name="Botella" type="Label" parent="Objetos/lista3"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("2_bn8wb")
 theme_override_font_sizes/font_size = 30
 text = "0
@@ -97,18 +117,33 @@ theme_override_constants/separation = 50
 [node name="Score" type="Label" parent="Margin/Row"]
 clip_contents = true
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("2_bn8wb")
 theme_override_font_sizes/font_size = 30
 text = "Puntos: 0"
 
 [node name="Lives" type="Label" parent="Margin/Row"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("2_bn8wb")
 theme_override_font_sizes/font_size = 30
 text = "vidas: 4"
 
 [node name="Timer" type="Label" parent="Margin/Row"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 9
 theme_override_fonts/font = ExtResource("2_bn8wb")
 theme_override_font_sizes/font_size = 30
 text = "Tiempo 5:00"
