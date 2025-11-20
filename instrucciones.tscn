@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://br476iw7t14d8"]
+[gd_scene load_steps=19 format=3 uid="uid://br476iw7t14d8"]
 
 [ext_resource type="Texture2D" uid="uid://36esmgp1a77e" path="res://assets/FONDO-CHICO-01.jpg" id="1_pc842"]
 [ext_resource type="Texture2D" uid="uid://dvuorrfpv8gta" path="res://assets/fondo instrucciones.png" id="2_2xsrb"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://r6ulbajo3fqp" path="res://assets/JUGADOR-03-2.png" id="13_th6vg"]
 [ext_resource type="Texture2D" uid="uid://d0sfx1exng53q" path="res://assets/paletas2.png" id="14_lgs06"]
 [ext_resource type="AudioStream" uid="uid://du8pmkd8vqacq" path="res://assets/musi/musica-bg.mp3" id="15_vgmpp"]
+[ext_resource type="Texture2D" uid="uid://cakjpem4d1okp" path="res://assets/flechitas.png" id="16_nn83d"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu7qx"]
 resource_name = "boton_verde"
@@ -60,38 +61,40 @@ texture = ExtResource("1_pc842")
 expand_mode = 1
 
 [node name="FondoInstrucciones" type="Sprite2D" parent="."]
-position = Vector2(593, 329)
-scale = Vector2(1.14275, 1.26563)
+position = Vector2(609.06, 339)
+scale = Vector2(1.21329, 1.34375)
 texture = ExtResource("2_2xsrb")
 
 [node name="Label5" type="Label" parent="."]
 layout_mode = 0
-offset_left = 258.0
-offset_top = 102.0
-offset_right = 637.0
-offset_bottom = 177.0
+offset_left = 251.0
+offset_top = 75.0
+offset_right = 630.0
+offset_bottom = 150.0
 theme_override_fonts/font = ExtResource("3_ihhqb")
 theme_override_font_sizes/font_size = 60
 text = "Instrucciones "
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 36.0
-offset_top = 178.0
-offset_right = 400.0
-offset_bottom = 618.0
+offset_left = -7.0
+offset_top = 189.0
+offset_right = 357.0
+offset_bottom = 629.0
 texture = ExtResource("3_cfvxx")
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 354.0
-offset_top = 209.0
-offset_right = 993.0
-offset_bottom = 320.0
+offset_left = 368.0
+offset_top = 191.0
+offset_right = 866.0
+offset_bottom = 316.0
 theme_override_fonts/font = ExtResource("3_cxsb0")
 theme_override_font_sizes/font_size = 25
-text = "Hola Soy ALQUI necesito terminar dos pocimas para ayudar 
-a dos gatitos me ayudas a cazar todos los ingredientes? "
+text = "Hola Soy ALQUI necesito terminar dos pocimas 
+para ayudar a dos gatitos me ayudas a cazar 
+todos los ingredientes?  Para eso tenés que 
+mover la olla con las flechitas del teclado"
 
 [node name="Fondo-chico-02" type="Sprite2D" parent="."]
 visible = false
@@ -103,20 +106,20 @@ centered = false
 
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 391.0
-offset_top = 473.0
-offset_right = 873.0
-offset_bottom = 513.0
+offset_left = 398.0
+offset_top = 493.0
+offset_right = 966.0
+offset_bottom = 533.0
 theme = SubResource("Theme_7y546")
 text = "Jugar "
 script = ExtResource("4_f72rf")
 
 [node name="CHARLY" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 376.0
-offset_top = 323.0
-offset_right = 623.0
-offset_bottom = 417.0
+offset_left = 371.0
+offset_top = 353.0
+offset_right = 618.0
+offset_bottom = 447.0
 alignment = 1
 
 [node name="Label4" type="Label" parent="CHARLY"]
@@ -166,10 +169,10 @@ texture = ExtResource("7_ugw30")
 
 [node name="ALVARO" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 706.0
-offset_top = 315.0
-offset_right = 953.0
-offset_bottom = 409.0
+offset_left = 727.0
+offset_top = 354.0
+offset_right = 974.0
+offset_bottom = 448.0
 alignment = 1
 
 [node name="Label4" type="Label" parent="ALVARO"]
@@ -219,10 +222,11 @@ layout_mode = 2
 texture = ExtResource("9_o7sg3")
 
 [node name="Corazon" type="Sprite2D" parent="."]
-position = Vector2(215, 136)
+position = Vector2(206, 113)
 texture = ExtResource("6_uw4wl")
 
 [node name="Jugador-03-2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1001, 539)
 scale = Vector2(1.20769, 1.20769)
 texture = ExtResource("13_th6vg")
@@ -235,5 +239,10 @@ texture = ExtResource("14_lgs06")
 stream = ExtResource("15_vgmpp")
 volume_db = 0.1
 autoplay = true
+
+[node name="Flechitas" type="Sprite2D" parent="."]
+position = Vector2(938, 237)
+scale = Vector2(0.0604257, 0.0604257)
+texture = ExtResource("16_nn83d")
 
 [connection signal="pressed" from="jugar" to="jugar" method="_on_play_pressed"]
