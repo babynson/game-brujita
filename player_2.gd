@@ -1,4 +1,7 @@
 extends CharacterBody2D
+ # efecto estrellita
+@export var collection_fx: PackedScene = preload("res://StarFX.tscn")
+
 
 @export var required_goods := 30        # necesarios para pasar de nivel
 @export var speed: float = 480.0
@@ -85,7 +88,14 @@ func lose_life() -> void:
 		game_over.emit()
 		
 # agrego conteo de objetos 2 
-		
+func _spawn_collection_fx() -> void:
+	if collection_fx:
+		var fx := collection_fx.instantiate()
+		get_tree().current_scene.add_child(fx)
+		fx.global_position = global_position + Vector2(0, -60)  # desde el player
+		# Si tu escena FX es CPUParticles2D o GPUParticles2D, activamos emisión
+		if fx is GPUParticles2D or fx is CPUParticles2D:
+			fx.emitting = true
 #funcion corazon 
 func add_ojo():
 	# Todavía no llegué al objetivo → sumo
@@ -96,6 +106,8 @@ func add_ojo():
 		_show_message(genial)
 		_play(point_sound)
 		print("❤️ Sumo un ojo. Total:", ojo)
+			# 🎇 ESTRELLITAS AL ATRAPAR CUALQUIER OBJETO BUENO
+		_spawn_collection_fx()
 	else:
 		# Ya llegué al objetivo → pierdo una vida
 		print("⚠️ Te pasaste del máximo de ojos, perdés una vida")
@@ -117,6 +129,8 @@ func add_caramelo():
 		_show_message(genial)
 		_play(point_sound)
 		print("❤️ Sumo una caramelo. Total:", caramelo)
+			# 🎇 ESTRELLITAS AL ATRAPAR CUALQUIER OBJETO BUENO
+		_spawn_collection_fx()
 	else:
 		# Ya llegué al objetivo → pierdo una vida
 		print("⚠️ Te pasaste del máximo de caramelo, perdés una vida")
@@ -138,6 +152,8 @@ func add_botella2():
 		_show_message(genial)
 		_play(point_sound)
 		print("❤️ Sumo una botella2. Total:", botella2)
+			# 🎇 ESTRELLITAS AL ATRAPAR CUALQUIER OBJETO BUENO
+		_spawn_collection_fx()
 	else:
 		# Ya llegué al objetivo → pierdo una vida
 		print("⚠️ Te pasaste del máximo de botellas2, perdés una vida")
@@ -172,6 +188,7 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 		lose_life()
 		area.queue_free()
 
+
 # ------- Utilidades visuales/sonoras -------
 func _show_message(txt: String) -> void:
 	message_label.text = txt
@@ -188,8 +205,35 @@ func _show_message2(txt: String) -> void:
 func _show_message3(txt: String) -> void:
 	message_label3.text = txt
 	message_label3.visible = true
-	await get_tree().create_timer(0.8).timeout
+	await _fade_out_label(message_label)
+	#await get_tree().create_timer(0.8).timeout
 	message_label3.visible = false
+	
+
+#desintegracion de label
+func _fade_out_label(label: Label, duration := 0.8) -> void:
+	if label == null:
+		return
+
+	# Estado inicial
+	label.visible = true
+	label.modulate.a = 1.0
+	label.scale = Vector2.ONE
+
+	var tw := create_tween()
+	# Se va desvaneciendo
+	tw.tween_property(label, "modulate:a", 0.0, duration)
+	# Y al mismo tiempo se agranda un poquito
+	tw.parallel().tween_property(label, "scale", Vector2(1.1, 1.1), duration)
+
+	await tw.finished
+
+	# Reset para la próxima vez
+	label.visible = false
+	label.modulate.a = 1.0
+	label.scale = Vector2.ONE
+
+# finaliza 
 	
 func _play(stream: AudioStream) -> void:
 	if stream == null:

@@ -1,10 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj26u3cu6bus0"]
+[gd_scene load_steps=7 format=3 uid="uid://cj26u3cu6bus0"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://r6ulbajo3fqp" path="res://assets/JUGADOR-03-2.png" id="2_ssciq"]
+[ext_resource type="Shader" path="res://Player.gdshader" id="3_xo1ge"]
+[ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="4_qhpwd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
 size = Vector2(106, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b78ct"]
+resource_local_to_scene = true
+shader = ExtResource("3_xo1ge")
+shader_parameter/cutoff = 0.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(240, 420)
@@ -31,6 +38,13 @@ offset_right = 45.0
 offset_bottom = -62.0
 theme_override_colors/font_color = Color(0.85098, 0.607843, 0.231373, 1)
 theme_override_colors/font_shadow_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("4_qhpwd")
 theme_override_font_sizes/font_size = 40
 text = "genial"
 
@@ -41,15 +55,30 @@ offset_right = 22.0
 offset_bottom = -63.0
 theme_override_colors/font_color = Color(0.945098, 0.192157, 0.0901961, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 4
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 11
+theme_override_fonts/font = ExtResource("4_qhpwd")
 theme_override_font_sizes/font_size = 40
 text = "ouch"
 
 [node name="Message3" type="Label" parent="."]
+material = SubResource("ShaderMaterial_b78ct")
 offset_left = -91.0
-offset_top = -151.0
+offset_top = -171.0
 offset_right = 74.0
-offset_bottom = -96.0
-theme_override_colors/font_color = Color(0.945098, 0.192157, 0.0901961, 1)
+offset_bottom = -116.0
+theme_override_colors/font_color = Color(0, 0.617858, 0.485522, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 7
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/font = ExtResource("4_qhpwd")
 theme_override_font_sizes/font_size = 40
 text = "repetido"

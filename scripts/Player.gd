@@ -1,4 +1,6 @@
 extends CharacterBody2D
+# O LO ASIGNÁS EN EL EDITOR, o así con preload:
+@export var collection_fx: PackedScene = preload("res://StarFX.tscn")
 
 @export var required_goods := 30        # necesarios para pasar de nivel
 @export var speed: float = 380.0
@@ -93,6 +95,16 @@ func lose_life() -> void:
 	if lives <= 0:
 		game_over.emit()
 		
+func _spawn_collection_fx() -> void:
+	if collection_fx:
+		var fx := collection_fx.instantiate()
+		get_tree().current_scene.add_child(fx)
+		fx.global_position = global_position + Vector2(0, -60)  # desde el player
+		# Si tu escena FX es CPUParticles2D o GPUParticles2D, activamos emisión
+		if fx is GPUParticles2D or fx is CPUParticles2D:
+			fx.emitting = true
+
+				
 #funcion corazon 
 func add_corazon():
 	# Todavía no llegué al objetivo → sumo
@@ -102,6 +114,9 @@ func add_corazon():
 		item_collected.emit("corazon", corazon)
 		_show_message(genial)
 		_play(point_sound)
+		# 🎇 ESTRELLITAS AL ATRAPAR CUALQUIER OBJETO BUENO
+		_spawn_collection_fx()
+	
 		print("❤️ Sumo un corazón. Total:", corazon)
 	else:
 		# Ya llegué al objetivo → pierdo una vida
@@ -123,6 +138,7 @@ func add_estrella():
 		item_collected.emit("estrella", estrella)
 		_show_message(genial)
 		_play(point_sound)
+		_spawn_collection_fx()
 		print("❤️ Sumo una estrella. Total:", estrella)
 	else:
 		# Ya llegué al objetivo → pierdo una vida
@@ -144,6 +160,7 @@ func add_botella():
 		item_collected.emit("botella", botella)
 		_show_message(genial)
 		_play(point_sound)
+		_spawn_collection_fx()
 		print("❤️ Sumo una botella. Total:", botella)
 	else:
 		# Ya llegué al objetivo → pierdo una vida

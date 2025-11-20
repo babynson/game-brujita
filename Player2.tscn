@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://tplh60pssi70"]
+[gd_scene load_steps=5 format=3 uid="uid://tplh60pssi70"]
 
 [ext_resource type="Script" path="res://player_2.gd" id="1_g44lu"]
 [ext_resource type="Texture2D" uid="uid://cg5uds14o3nr1" path="res://assets/JUGADOR-03.png" id="2_2qnmk"]
+[ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="3_6uso6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
 size = Vector2(106, 32)
@@ -31,6 +32,12 @@ offset_right = 45.0
 offset_bottom = -62.0
 theme_override_colors/font_color = Color(0.85098, 0.607843, 0.231373, 1)
 theme_override_colors/font_shadow_color = Color(0.0728426, 0.0728426, 0.0728426, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("3_6uso6")
 theme_override_font_sizes/font_size = 40
 text = "genial"
 
@@ -41,6 +48,12 @@ offset_right = 22.0
 offset_bottom = -63.0
 theme_override_colors/font_color = Color(0.945098, 0.192157, 0.0901961, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("3_6uso6")
 theme_override_font_sizes/font_size = 40
 text = "ouch"
 
@@ -49,7 +62,14 @@ offset_left = -94.0
 offset_top = -170.0
 offset_right = 81.0
 offset_bottom = -115.0
-theme_override_colors/font_color = Color(0.945098, 0.192157, 0.0901961, 1)
+theme_override_colors/font_color = Color(0.0663346, 0.60808, 0.554336, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 7
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("3_6uso6")
 theme_override_font_sizes/font_size = 40
 text = "repetido "

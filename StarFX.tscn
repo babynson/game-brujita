@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://buekjsimnym0x"]
+
+[ext_resource type="Script" path="res://star_fx.gd" id="1_gop50"]
+[ext_resource type="Texture2D" uid="uid://c20mbyatpnl2e" path="res://assets/ESTRELLA.png" id="1_l7hkv"]
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+position = Vector2(3, -77)
+emitting = false
+amount = 50
+lifetime = 0.9
+one_shot = true
+spread = 180.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 190.61
+initial_velocity_max = 315.99
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+color = Color(0.637034, 0.636861, 1.15514e-06, 1)
+script = ExtResource("1_gop50")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 20.0
+offset_bottom = 25.0
+texture = ExtResource("1_l7hkv")
+expand_mode = 1
