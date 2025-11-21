@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj26u3cu6bus0"]
+[gd_scene load_steps=8 format=3 uid="uid://cj26u3cu6bus0"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1"]
 [ext_resource type="Texture2D" uid="uid://r6ulbajo3fqp" path="res://assets/JUGADOR-03-2.png" id="2_ssciq"]
 [ext_resource type="Shader" path="res://Player.gdshader" id="3_xo1ge"]
+[ext_resource type="Script" path="res://smoke_text.shader.gd" id="4_f3o56"]
 [ext_resource type="FontFile" uid="uid://bmjq8j1s4j8lw" path="res://assets/fonts/BRLNSB.TTF" id="4_qhpwd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
@@ -47,6 +48,7 @@ theme_override_constants/shadow_outline_size = 12
 theme_override_fonts/font = ExtResource("4_qhpwd")
 theme_override_font_sizes/font_size = 40
 text = "genial"
+script = ExtResource("4_f3o56")
 
 [node name="Message2" type="Label" parent="."]
 offset_left = -73.0
@@ -64,6 +66,7 @@ theme_override_constants/shadow_outline_size = 11
 theme_override_fonts/font = ExtResource("4_qhpwd")
 theme_override_font_sizes/font_size = 40
 text = "ouch"
+script = ExtResource("4_f3o56")
 
 [node name="Message3" type="Label" parent="."]
 material = SubResource("ShaderMaterial_b78ct")
@@ -82,3 +85,4 @@ theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("4_qhpwd")
 theme_override_font_sizes/font_size = 40
 text = "repetido"
+script = ExtResource("4_f3o56")

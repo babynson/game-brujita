@@ -13,6 +13,10 @@ extends CharacterBody2D
 @onready var message_label2: Label = $Message2
 @onready var message_label3: Label = $Message3
 
+@onready var icon_corazon: TextureRect = $Objetos/lista/IconCorazon
+@onready var icon_estrella: TextureRect = $Objetos/lista/IconEstrella
+@onready var icon_botella: TextureRect = $IObjetos/lista/conBotella
+
 @onready var audio_player: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 
 # sonidos
@@ -91,6 +95,7 @@ func lose_life() -> void:
 	lives -= 1
 	lives_changed.emit(lives)
 	_show_message2(ouch)
+	$Message2.smoke_out()
 	_play(fail_sound)
 	if lives <= 0:
 		game_over.emit()
@@ -113,7 +118,11 @@ func add_corazon():
 		emit_signal("corazon_changed", corazon)
 		item_collected.emit("corazon", corazon)
 		_show_message(genial)
+		$Message.smoke_out()
 		_play(point_sound)
+		# 🎇 animar icono corazon 
+		#animate_icon(icon_corazon)
+		
 		# 🎇 ESTRELLITAS AL ATRAPAR CUALQUIER OBJETO BUENO
 		_spawn_collection_fx()
 	
@@ -123,6 +132,7 @@ func add_corazon():
 		print("⚠️ Te pasaste del máximo de corazones, perdés una vida")
 		if has_method("lose_life"):
 			_show_message3(repetido)
+			$Message3.smoke_out()
 			_play(fail_sound)
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
@@ -137,7 +147,9 @@ func add_estrella():
 		emit_signal("estrella_changed", estrella)
 		item_collected.emit("estrella", estrella)
 		_show_message(genial)
+		$Message.smoke_out()
 		_play(point_sound)
+		
 		_spawn_collection_fx()
 		print("❤️ Sumo una estrella. Total:", estrella)
 	else:
@@ -145,7 +157,9 @@ func add_estrella():
 		print("⚠️ Te pasaste del máximo de estrellas, perdés una vida")
 		if has_method("lose_life"):
 			_show_message3(repetido)
+			$Message3.smoke_out()
 			_play(fail_sound)
+			
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
 			lives -= 1
@@ -159,6 +173,7 @@ func add_botella():
 		emit_signal("botella_changed", botella)
 		item_collected.emit("botella", botella)
 		_show_message(genial)
+		$Message.smoke_out()
 		_play(point_sound)
 		_spawn_collection_fx()
 		print("❤️ Sumo una botella. Total:", botella)
@@ -167,6 +182,7 @@ func add_botella():
 		print("⚠️ Te pasaste del máximo de botellas, perdés una vida")
 		if has_method("lose_life"):
 			_show_message3(repetido)
+			$Message3.smoke_out()
 			_play(fail_sound)
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
