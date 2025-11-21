@@ -83,6 +83,7 @@ func lose_life() -> void:
 	lives -= 1
 	lives_changed.emit(lives)
 	_show_message2(ouch)
+	$Message2.smoke_out()
 	_play(fail_sound)
 	if lives <= 0:
 		game_over.emit()
@@ -104,6 +105,7 @@ func add_ojo():
 		emit_signal("ojo_changed", ojo)
 		item_collected.emit("ojo", ojo)
 		_show_message(genial)
+		$Message.smoke_out()
 		_play(point_sound)
 		print("❤️ Sumo un ojo. Total:", ojo)
 			# 🎇 ESTRELLITAS AL ATRAPAR CUALQUIER OBJETO BUENO
@@ -113,6 +115,7 @@ func add_ojo():
 		print("⚠️ Te pasaste del máximo de ojos, perdés una vida")
 		if has_method("lose_life"):
 			_show_message3(repetido)
+			$Message3.smoke_out()
 			_play(fail_sound)
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
@@ -127,6 +130,7 @@ func add_caramelo():
 		emit_signal("caramelo_changed", caramelo)
 		item_collected.emit("caramelo", caramelo)
 		_show_message(genial)
+		$Message.smoke_out()
 		_play(point_sound)
 		print("❤️ Sumo una caramelo. Total:", caramelo)
 			# 🎇 ESTRELLITAS AL ATRAPAR CUALQUIER OBJETO BUENO
@@ -136,6 +140,7 @@ func add_caramelo():
 		print("⚠️ Te pasaste del máximo de caramelo, perdés una vida")
 		if has_method("lose_life"):
 			_show_message3(repetido)
+			$Message3.smoke_out()
 			_play(fail_sound)
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
@@ -150,6 +155,7 @@ func add_botella2():
 		emit_signal("botella2_changed", botella2)
 		item_collected.emit("botella2", botella2)
 		_show_message(genial)
+		$Message.smoke_out()
 		_play(point_sound)
 		print("❤️ Sumo una botella2. Total:", botella2)
 			# 🎇 ESTRELLITAS AL ATRAPAR CUALQUIER OBJETO BUENO
@@ -159,6 +165,7 @@ func add_botella2():
 		print("⚠️ Te pasaste del máximo de botellas2, perdés una vida")
 		if has_method("lose_life"):
 			_show_message3(repetido)
+			$Message3.smoke_out()
 			_play(fail_sound)
 			lose_life()  # si ya tenés esta función, mejor reutilizarla
 		else:
